@@ -1,0 +1,14 @@
+{
+  "name": "wissensschatz",
+  "version": "1.0.0",
+  "description": "Kontinuierlich fütterbares Wissensarchiv mit Selbstorganisation, Lernmodus und verschlüsseltem Tresor",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "feed": "node tools/feed.mjs",
+    "test": "node tools/test.mjs",
+    "start": "node tools/build.mjs && echo \"\nweb/index.html im Browser öffnen.\""
+  }
+}

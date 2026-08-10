@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wissensschatz</title>
+<meta name="description" content="Kontinuierlich wachsendes Wissensarchiv mit Lernmodus, Visualisierungen und verschlüsseltem Tresor.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="app.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#10070;</text></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="marke">Wissens<span>schatz</span></div>
+    <nav class="haupt" id="nav"></nav>
+    <div class="suchfeld">
+      <input type="search" id="suche" placeholder="Suchen …  (/)" autocomplete="off" spellcheck="false" aria-label="Wissen durchsuchen">
+    </div>
+  </div>
+</header>
+
+<main id="app">
+  <div class="leer"><div class="gross">❖</div>Wird geladen …</div>
+</main>
+
+<noscript>
+  <main>
+    <div class="karte">
+      <h1>JavaScript ist deaktiviert</h1>
+      <p>Diese Oberfläche braucht JavaScript. Der Inhalt des Archivs liegt aber unabhängig davon
+         als Markdown-Dateien im Ordner <code>content/</code> und lässt sich mit jedem Texteditor lesen —
+         das ist beabsichtigt.</p>
+    </div>
+  </main>
+</noscript>
+
+<script src="kb-data.js"></script>
+<script src="viz.js"></script>
+<script src="vault.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

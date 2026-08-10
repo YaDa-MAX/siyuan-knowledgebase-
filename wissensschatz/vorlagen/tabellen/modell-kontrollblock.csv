@@ -1,0 +1,18 @@
+Prüfung;Formel (in Spalte C einfügen);Erwartung;Bemerkung
+Ampel gesamt;=WENN(UND(C3:C12);"OK";"PRÜFEN");WAHR;Ganz oben aufs Dashboard. Eine Zahl, die jeder versteht.
+Summe Detail = Summe Kopf;=RUNDEN(SUMME(Detail[Betrag])-Kopfsumme;2)=0;WAHR;Der Klassiker. Fängt vergessene Zeilen.
+Keine Nachschlagefehler;=ZÄHLENWENN(Ergebnis[Zuordnung];"#NV")=0;WAHR;Offene Zuordnungen sichtbar machen.
+Keine Dubletten im Schlüssel;=ANZAHL2(Schlüssel)=SUMMENPRODUKT(1/ZÄHLENWENN(Schlüssel;Schlüssel));WAHR;Bricht bei Leerzellen — vorher filtern.
+Keine Konstanten im Rechenbereich;=ZÄHLENWENN(Rechenbereich;"<>")=SUMMENPRODUKT(--ISTFORMEL(Rechenbereich));WAHR;Findet hart eingetippte Zahlen zwischen Formeln.
+Stichtag im gültigen Bereich;=UND(Stichtag>=Von;Stichtag<=Bis);WAHR;Verhindert Auswertung außerhalb der Datenbasis.
+Alle Pflichtfelder gefüllt;=ZÄHLENWENNS(Daten[Haus];"";Daten[Datum];"<>")=0;WAHR;Je Pflichtfeld eine Zeile.
+Beträge plausibel;=UND(MIN(Daten[Betrag])>-100000;MAX(Daten[Betrag])<1000000);WAHR;Grenzen fachlich festlegen, nicht raten.
+Datum nicht in der Zukunft;=ZÄHLENWENN(Daten[Datum];">"&HEUTE())=0;WAHR;Häufigster Tippfehler beim Jahr.
+Aktualisierung nicht veraltet;=HEUTE()-Aktualisierungsstand<=7;WAHR;Stand aus Power Query schreiben lassen, nicht mit JETZT().
+Zeilenzahl gegenüber Vorlauf stabil;=ABS(ANZAHL2(Daten[ID])-Vorlauf_Zeilen)/Vorlauf_Zeilen<0,2;WAHR;Warnt bei halb geladenen Quellen.
+;;;
+# Anwendung:;;;
+# 1. Blatt "00_Kontrolle" anlegen und diese Liste einfügen.;;;
+# 2. Spalte C je Zeile mit der passenden Formel füllen (Namen an das Modell anpassen).;;;
+# 3. Bedingte Formatierung: FALSCH rot hinterlegen.;;;
+# 4. Auf dem Dashboard oben eine einzige Zelle mit der Gesamtampel verlinken.;;;

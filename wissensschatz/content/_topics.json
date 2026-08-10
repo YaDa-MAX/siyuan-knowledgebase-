@@ -1,0 +1,59 @@
+{
+  "excel": {
+    "label": "Excel",
+    "icon": "▦",
+    "color": "#1d7044",
+    "claim": "Von der Zelle bis zum LAMBDA-Kalkül",
+    "desc": "Tabellenkalkulation als Werkzeug und als Denkmodell: Bezüge, Formelsprache, Datenmodell, Automatisierung."
+  },
+  "powerbi": {
+    "label": "Power BI",
+    "icon": "◔",
+    "color": "#c8a207",
+    "claim": "Modell schlägt Measure, Measure schlägt Visual",
+    "desc": "Datenbeschaffung, Sternschema, DAX-Auswertungskontext, Performance und Betrieb."
+  },
+  "fotografie": {
+    "label": "Fotografie",
+    "icon": "◎",
+    "color": "#3b6ea5",
+    "claim": "Licht, Optik, Sensor — und die richtige Einstellung",
+    "desc": "Physikalische Grundlagen, Kameratechnik, Motiv-Rezepte und die Systemlandschaft der Hersteller."
+  },
+  "druck": {
+    "label": "Druck",
+    "icon": "⎙",
+    "color": "#8a4f9e",
+    "claim": "Jede Technologie hat ihren Einsatzzweck",
+    "desc": "Druckverfahren von Tintenstrahl bis Thermosublimation, Medien, Farbmanagement, Haltbarkeit."
+  },
+  "prozessautomation": {
+    "label": "Prozessautomation",
+    "icon": "⚙",
+    "color": "#b4632a",
+    "claim": "Erst verstehen, dann vereinfachen, dann automatisieren",
+    "desc": "Prozessanalyse, Automatisierbarkeit, Werkzeugwahl, Einführung und Betrieb im Arbeitsalltag."
+  },
+  "fuehrung": {
+    "label": "Führung & HR",
+    "icon": "◈",
+    "color": "#2f7d7a",
+    "claim": "Theorie, die im Gespräch am Montag trägt",
+    "desc": "Führungs- und Motivationstheorien, Gesprächsführung, Entwicklungsbegleitung, Team- und Veränderungsdynamik."
+  },
+  "arbeitsrecht-de": {
+    "label": "Arbeitsrecht DE",
+    "icon": "§",
+    "color": "#9c3d3d",
+    "claim": "Schwerpunkt Hotellerie und Gastgewerbe",
+    "desc": "Vertrag, Arbeitszeit, Vergütung, Jugendarbeitsschutz, Beendigung — mit den Sonderregeln der Branche.",
+    "disclaimer": "Kein Rechtsrat. Aufbereitete Theorie zum Stand der Recherche — im Einzelfall Gesetzestext, Tarifvertrag und arbeitsrechtliche Beratung heranziehen."
+  },
+  "meta": {
+    "label": "Das Archiv selbst",
+    "icon": "❖",
+    "color": "#5a5f70",
+    "claim": "Wie gefüttert, gepflegt und weitergegeben wird",
+    "desc": "Konventionen, Pflegeroutine, Sicherungsstrategie und Übergabe an die nächste Generation."
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "title": "Druckverfahren im Vergleich",
+  "topic": "druck",
+  "note": "Kostenangaben sind Größenordnungen für den deutschen Markt und altern schneller als die Technik. Entscheidend sind Auflage, Medium und Haltbarkeitsanspruch.",
+  "columns": [
+    { "key": "tech", "label": "Verfahren" },
+    { "key": "prinzip", "label": "Prinzip" },
+    { "key": "farbe", "label": "Farbmittel" },
+    { "key": "eignung", "label": "Stärken" },
+    { "key": "schwaeche", "label": "Schwächen" },
+    { "key": "aufl", "label": "Auflage" },
+    { "key": "kosten", "label": "Kosten/Seite A4 farbig" },
+    { "key": "halt", "label": "Haltbarkeit" }
+  ],
+  "items": [
+    {
+      "tech": "Tintenstrahl thermisch (Bubble Jet)",
+      "prinzip": "Heizelement erzeugt eine Dampfblase, die einen Tropfen ausstößt.",
+      "farbe": "Dye oder Pigment, wässrig",
+      "eignung": "Günstige Geräte, sehr gute Fotoqualität, viele Medien, randlos möglich.",
+      "schwaeche": "Druckkopf oft in der Patrone (teuer), Eintrocknen bei Standzeiten, Papierwellung.",
+      "aufl": "1–500 Seiten",
+      "kosten": "0,08–0,25 €",
+      "halt": "Dye 5–25 Jahre, Pigment 50–100+ Jahre"
+    },
+    {
+      "tech": "Tintenstrahl piezoelektrisch",
+      "prinzip": "Piezokristall verformt sich und drückt den Tropfen heraus.",
+      "farbe": "Dye, Pigment, UV, Solvent, Latex",
+      "eignung": "Präzise Tropfenkontrolle, variable Tropfengröße, dauerhafter Druckkopf, breite Tintenauswahl.",
+      "schwaeche": "Höherer Gerätepreis; Druckkopf bei Defekt teuer.",
+      "aufl": "1–5000 Seiten",
+      "kosten": "0,03–0,15 € (Tanksysteme deutlich günstiger)",
+      "halt": "wie oben, tintenabhängig"
+    },
+    {
+      "tech": "Laser / LED (Elektrofotografie)",
+      "prinzip": "Belichtete Trommel zieht Toner an, Übertragung auf Papier, Fixierung mit Hitze und Druck.",
+      "farbe": "Toner (Kunststoffpulver mit Pigment)",
+      "eignung": "Schnell, wischfest, wasserfest, günstig bei Text und mittleren Auflagen, keine Eintrocknung.",
+      "schwaeche": "Fotoqualität begrenzt, kein echtes Randlos, Glanzunterschiede, Feinstaub- und Ozonfrage, kein Naturpapier mit starker Struktur.",
+      "aufl": "50–20.000 Seiten",
+      "kosten": "0,05–0,12 €",
+      "halt": "sehr hoch, aber hitzeempfindlich (Toner schmilzt wieder)"
+    },
+    {
+      "tech": "Thermosublimation (Dye-Sub)",
+      "prinzip": "Farbstoff aus einer Folie wird durch Hitze in die Beschichtung des Trägers übergeführt; jede Farbe in einem eigenen Durchgang, danach Schutzschicht.",
+      "farbe": "Sublimierbare Farbstoffe (Y, M, C + Overcoat)",
+      "eignung": "Echte kontinuierliche Tonwerte ohne Raster, wischfest, wasserfest und sofort trocken. Der Standard für Fotokioske, Passbild-, Event- und Ausweisdruck.",
+      "schwaeche": "Nur beschichtete Spezialmedien, fixe Formate, kein Text auf Normalpapier, Verbrauchsmaterial je Bild vorbezahlt.",
+      "aufl": "1–2000 Bilder",
+      "kosten": "0,25–0,60 € je 10 × 15 cm",
+      "halt": "typ. 20–100 Jahre hinter der Schutzschicht"
+    },
+    {
+      "tech": "Thermotransfer (Wachs/Harz)",
+      "prinzip": "Thermodruckkopf schmilzt Farbe von einem Farbband auf das Medium.",
+      "farbe": "Wachs, Wachs-Harz, Harz",
+      "eignung": "Extrem beständige Etiketten: Harzband auf Folie ist wisch-, wasser-, chemikalien- und UV-fest. Standard für Typenschilder, Laboretiketten, Kabelmarkierer, Regaletiketten.",
+      "schwaeche": "Farbband als laufende Kosten, meist einfarbig, Band-Medium-Kombination muss passen.",
+      "aufl": "1–100.000 Etiketten",
+      "kosten": "0,5–3 ct je Etikett",
+      "halt": "Wachs 1–3 Jahre, Harz über 10 Jahre auch im Außeneinsatz"
+    },
+    {
+      "tech": "Thermodirekt",
+      "prinzip": "Wärmeempfindliches Papier schwärzt sich unter dem Druckkopf — kein Farbmittel nötig.",
+      "farbe": "keines (Papierbeschichtung)",
+      "eignung": "Günstigstes Verfahren überhaupt, wartungsarm, schnell. Kassenbons, Versandetiketten, Waagen, Tickets, Küchendrucker.",
+      "schwaeche": "Verblasst durch Hitze, Licht, Fett und Weichmacher. Nicht archivfähig. Bisphenol-Thematik bei Thermopapier.",
+      "aufl": "beliebig",
+      "kosten": "unter 1 ct je Bon",
+      "halt": "Wochen bis wenige Jahre — je nach Lagerung"
+    },
+    {
+      "tech": "Sublimationsdruck auf Textil (Transferdruck)",
+      "prinzip": "Sublimationstinte wird auf Transferpapier gedruckt und mit Hitze in Polyestergewebe übergeführt.",
+      "farbe": "Sublimationstinte",
+      "eignung": "Farbe sitzt im Faserinneren: kein Griff, kein Ausbleichen beim Waschen, ganzflächige Motive.",
+      "schwaeche": "Nur helles Polyester (mind. ca. 65 %), nicht auf Baumwolle, nicht auf Dunkel.",
+      "aufl": "1–1000 Stück",
+      "kosten": "je nach Fläche",
+      "halt": "sehr hoch, waschbeständig"
+    },
+    {
+      "tech": "DTG (Direct to Garment)",
+      "prinzip": "Tintenstrahl direkt auf das Textil, bei dunklen Stoffen mit weißem Unterdruck.",
+      "farbe": "Pigmenttinte für Textil",
+      "eignung": "Fotorealistisch auf Baumwolle, Einzelstücke wirtschaftlich, kein Siebaufwand.",
+      "schwaeche": "Vorbehandlung nötig, langsam, Waschbeständigkeit unter Siebdruck.",
+      "aufl": "1–200 Stück",
+      "kosten": "2–8 € je Shirt",
+      "halt": "30–50 Wäschen"
+    },
+    {
+      "tech": "DTF (Direct to Film)",
+      "prinzip": "Druck auf Transferfolie, Klebepulver, Hitzepresse.",
+      "farbe": "Pigmenttinte + Hotmelt",
+      "eignung": "Funktioniert auf nahezu jedem Textil und jeder Farbe, kein Vorbehandeln.",
+      "schwaeche": "Spürbarer Film auf dem Stoff, weniger atmungsaktiv.",
+      "aufl": "1–500 Stück",
+      "kosten": "1–4 € je Motiv",
+      "halt": "30–50 Wäschen"
+    },
+    {
+      "tech": "Siebdruck",
+      "prinzip": "Farbe wird durch ein Gewebe mit Schablone gerakelt, je Farbe ein Sieb.",
+      "farbe": "Plastisol, Wasserbasis, Spezialfarben",
+      "eignung": "Höchste Deckkraft und Waschbeständigkeit, Sonderfarben, Metallic, Neon, Puff. Ab etwa 30 Stück günstiger als Digitaldruck.",
+      "schwaeche": "Einrichtkosten je Farbe, keine Fotomotive mit vielen Farbnuancen wirtschaftlich.",
+      "aufl": "ab 25 Stück",
+      "kosten": "sinkt stark mit Auflage",
+      "halt": "sehr hoch"
+    },
+    {
+      "tech": "Offsetdruck",
+      "prinzip": "Indirekt: Druckplatte an Gummituch an Papier; Farb-Wasser-Trennung.",
+      "farbe": "Ölbasierte Druckfarbe, CMYK + Sonderfarben (HKS, Pantone)",
+      "eignung": "Bester Preis ab etwa 1000 Exemplaren, höchste Bildqualität, jedes Papier, Veredelungen. Standard für Bücher, Kataloge, Verpackungen.",
+      "schwaeche": "Hohe Einrichtkosten (Platten, Einrichten), unwirtschaftlich bei Kleinauflagen, keine Personalisierung.",
+      "aufl": "ab 1000",
+      "kosten": "wenige Cent bei hoher Auflage",
+      "halt": "sehr hoch"
+    },
+    {
+      "tech": "Digitaldruck Toner (Produktion)",
+      "prinzip": "Elektrofotografie im Produktionsmaßstab (Xerox, Canon, Konica, HP Indigo mit Flüssigtoner).",
+      "farbe": "Toner bzw. ElectroInk",
+      "eignung": "Kleinauflagen, Personalisierung, Buch on demand, schnelle Lieferzeit.",
+      "schwaeche": "Höherer Stückpreis als Offset ab mittlerer Auflage, Formatgrenzen.",
+      "aufl": "1–1000",
+      "kosten": "0,05–0,40 €",
+      "halt": "hoch"
+    },
+    {
+      "tech": "UV-Druck (LED-UV)",
+      "prinzip": "Tinte härtet sofort unter UV-Licht aus, statt einzuziehen oder zu trocknen.",
+      "farbe": "UV-härtende Tinte, oft mit Weiß und Lack",
+      "eignung": "Druckt auf fast alles: Holz, Metall, Glas, Acryl, Fliesen, Leder. Sofort weiterverarbeitbar, Reliefeffekte möglich, sehr UV- und kratzfest.",
+      "schwaeche": "Teure Geräte und Tinten, Haftung auf manchen Materialien braucht Primer, Tinte bleibt ein Film auf der Oberfläche.",
+      "aufl": "1–5000",
+      "kosten": "materialabhängig",
+      "halt": "sehr hoch, außentauglich"
+    },
+    {
+      "tech": "Latexdruck",
+      "prinzip": "Wasserbasierte Tinte mit Latexpolymeren, Trocknung mit Wärme.",
+      "farbe": "Latextinte",
+      "eignung": "Geruchsarm und ohne Ausdünstung — deshalb für Innenräume, Kliniken, Gastronomie und Schulen zugelassen. Große Medienvielfalt, sofort laminierbar.",
+      "schwaeche": "Hoher Energiebedarf, empfindlichere Medienführung.",
+      "aufl": "Großformat",
+      "kosten": "je m²",
+      "halt": "3–5 Jahre außen, mit Laminat länger"
+    },
+    {
+      "tech": "Eco-Solvent / Solvent",
+      "prinzip": "Lösemittelhaltige Tinte löst die Vinyloberfläche an und verankert sich darin.",
+      "farbe": "Solventtinte",
+      "eignung": "Fahrzeugbeschriftung, Banner, Außenwerbung — sehr wetterfest und dehnbar.",
+      "schwaeche": "Lösemittelgeruch, Absaugung nötig, Ausgasungszeit vor dem Laminieren.",
+      "aufl": "Großformat",
+      "kosten": "je m²",
+      "halt": "3–7 Jahre außen"
+    },
+    {
+      "tech": "Flexodruck",
+      "prinzip": "Hochdruck mit flexibler Fotopolymerplatte.",
+      "farbe": "Wasser-, UV- oder lösemittelbasiert",
+      "eignung": "Endlosmaterialien: Folien, Wellpappe, Etiketten, Getränkekartons. Sehr hohe Geschwindigkeit.",
+      "schwaeche": "Klischeekosten, feine Raster begrenzt.",
+      "aufl": "ab 10.000",
+      "kosten": "sehr niedrig bei hoher Auflage",
+      "halt": "hoch"
+    },
+    {
+      "tech": "Tiefdruck (Rotogravur)",
+      "prinzip": "Farbe sitzt in Näpfchen eines gravierten Zylinders.",
+      "farbe": "niedrigviskose Druckfarbe",
+      "eignung": "Millionenauflagen mit konstanter Qualität: Zeitschriften, Versandkataloge, Verpackungsfolien.",
+      "schwaeche": "Extrem hohe Zylinderkosten, nur für Größtauflagen.",
+      "aufl": "ab 200.000",
+      "kosten": "minimal bei Größtauflage",
+      "halt": "hoch"
+    },
+    {
+      "tech": "Silberhalogenid-Belichtung (Fotolabor)",
+      "prinzip": "Laser oder LED belichten klassisches Fotopapier, danach chemische Entwicklung.",
+      "farbe": "Silberhalogenid-Emulsion",
+      "eignung": "Das, was Menschen als „echtes Foto\" kennen: kontinuierliche Tonwerte, kein Raster, günstig bei Standardformaten.",
+      "schwaeche": "Nur Fotopapier, feste Formate, Chemie und Nassprozess.",
+      "aufl": "1–10.000",
+      "kosten": "0,10–0,50 € je 10 × 15 cm",
+      "halt": "40–100 Jahre je nach Papier und Lagerung"
+    },
+    {
+      "tech": "3D-Druck FDM",
+      "prinzip": "Thermoplastischer Faden wird schichtweise aufgeschmolzen.",
+      "farbe": "PLA, PETG, ABS, ASA, TPU",
+      "eignung": "Günstigster Einstieg, große Bauräume, funktionale Teile, Ersatzteile.",
+      "schwaeche": "Sichtbare Schichten, anisotrope Festigkeit, Stützstrukturen.",
+      "aufl": "Einzelstück bis Kleinserie",
+      "kosten": "Materialkosten gering, Zeit dominiert",
+      "halt": "materialabhängig, PLA nicht UV- und hitzefest"
+    },
+    {
+      "tech": "3D-Druck SLA / DLP / LCD",
+      "prinzip": "Flüssiges Harz wird schichtweise mit Licht ausgehärtet.",
+      "farbe": "Photopolymer-Harz",
+      "eignung": "Sehr feine Details und glatte Oberflächen: Modellbau, Dental, Schmuckurmodelle.",
+      "schwaeche": "Harz ist reizend, Nachbearbeitung (Waschen, Nachhärten), oft spröde, UV-empfindlich.",
+      "aufl": "Einzelstück",
+      "kosten": "Harz teurer als Filament",
+      "halt": "begrenzt, Nachvergilbung"
+    },
+    {
+      "tech": "3D-Druck SLS / MJF",
+      "prinzip": "Pulverbett wird selektiv gesintert bzw. verschmolzen.",
+      "farbe": "PA12 / PA11 Pulver",
+      "eignung": "Funktionsteile ohne Stützstruktur, belastbar, Serienfertigung im Kleinmaßstab.",
+      "schwaeche": "Teure Anlagen, raue Oberfläche, meist Dienstleisterfertigung.",
+      "aufl": "Klein- bis Mittelserie",
+      "kosten": "je Bauvolumen",
+      "halt": "hoch"
+    }
+  ]
+}

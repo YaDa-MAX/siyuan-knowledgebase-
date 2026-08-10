@@ -1,0 +1,15 @@
+# Der Tresor selbst — verschlüsselte Sicherungen bleiben lokal.
+# Der Blob wäre zwar ohne Passphrase UND Schlüsseldatei nicht zu öffnen,
+# aber ein Geheimtext, der nicht im Netz liegt, kann auch nicht angegriffen werden.
+tresor/*
+!tresor/.gitkeep
+
+# Schlüsseldateien gehören NIEMALS in die Versionsverwaltung.
+*schluessel*.json
+*keyfile*.json
+
+# Betriebssystem und Editoren
+.DS_Store
+Thumbs.db
+*.swp
+*~

@@ -1,0 +1,84 @@
+{
+  "title": "Vorlagen und Skripte",
+  "topic": "excel",
+  "note": "Einsatzfertige Dateien im Ordner wissensschatz/vorlagen/. Alle Skripte sind kommentiert und einzeln verwendbar — nichts davon setzt ein Framework voraus.",
+  "columns": [
+    { "key": "datei", "label": "Datei" },
+    { "key": "art", "label": "Art" },
+    { "key": "zweck", "label": "Zweck" },
+    { "key": "einbau", "label": "Einbau" },
+    { "key": "lvl", "label": "Stufe", "type": "level" }
+  ],
+  "items": [
+    {
+      "datei": "vba/modWerkzeuge.bas",
+      "art": "VBA-Modul",
+      "zweck": "Grundbausteine: TurboAn/TurboAus, letzte Zeile, Blatt holen/anlegen, Array-Lesen und -Schreiben, Protokoll, Textbereinigung, Arbeitszeit über Mitternacht, Ostersonntag und Feiertage.",
+      "einbau": "Alt+F11 ▸ Datei ▸ Datei importieren",
+      "lvl": 3
+    },
+    {
+      "datei": "vba/modAblaeufe.bas",
+      "art": "VBA-Modul",
+      "zweck": "Sieben fertige Abläufe: Fehlerbehandlungsgerüst, Ordner sammeln, Blätter als PDF, nach Spalte aufteilen, Serienmail über Outlook, Arbeitszeitprüfung nach ArbZG, Mappe aufräumen.",
+      "einbau": "Importieren, setzt modWerkzeuge voraus",
+      "lvl": 4
+    },
+    {
+      "datei": "vba/modSqlAdo.bas",
+      "art": "VBA-Modul",
+      "zweck": "SQL aus Excel heraus über ADO — gegen die eigene Mappe, gegen geschlossene Dateien und gegen SQL Server. Mit parametrisierten Abfragen gegen SQL-Injection und Treiberprüfung.",
+      "einbau": "Importieren, keine Verweise nötig (späte Bindung)",
+      "lvl": 5
+    },
+    {
+      "datei": "sql/01-grundabfragen.sql",
+      "art": "SQL-Referenz",
+      "zweck": "Zehn Grundmuster: Auswertungsreihenfolge, JOIN-Arten, NULL-Behandlung, indexfreundliche Datumsfilter, bedingte Aggregation, Fensterfunktionen, CTE, Datenqualitätsprüfung, NOT EXISTS, Performance-Regeln.",
+      "einbau": "Nachschlagen und übernehmen",
+      "lvl": 3
+    },
+    {
+      "datei": "sql/02-excel-als-datenquelle.sql",
+      "art": "SQL-Referenz",
+      "zweck": "Drei Wege: SQL gegen Excel-Blätter über ACE, native Abfrage in Power Query, Sicht in der Datenbank. Dazu eine Kalendertabelle in T-SQL.",
+      "einbau": "Je nach Weg in VBA, Power Query oder Datenbank",
+      "lvl": 4
+    },
+    {
+      "datei": "office-scripts/monatsbericht.ts",
+      "art": "Office Script",
+      "zweck": "Berechnet Monatskennzahlen aus einer Tabelle, schreibt ein Berichtsblatt und gibt die Werte typisiert an einen Power-Automate-Flow zurück. Erkennt Datumswerte und Excel-Seriennummern.",
+      "einbau": "Excel ▸ Automatisieren ▸ Neues Skript",
+      "lvl": 3
+    },
+    {
+      "datei": "powerquery/ordner-sammeln.pq",
+      "art": "Power Query (M)",
+      "zweck": "Alle Excel-Dateien eines Ordners einlesen, Herkunft mitführen, Typen mit Gebietsschema setzen, geschützte Leerzeichen entfernen, Zeit- und Prüfspalten anfügen.",
+      "einbau": "Leere Abfrage ▸ Erweiterter Editor ▸ Text ersetzen; Parameter „Ordnerpfad“ anlegen",
+      "lvl": 3
+    },
+    {
+      "datei": "powerquery/kalender.pq",
+      "art": "Power Query (M)",
+      "zweck": "Vollständige Kalendertabelle mit ISO-Woche, Quartal, Saison, Monatsversatz — inklusive deutscher Feiertage je Bundesland samt Ostergleichung und Buß- und Bettag.",
+      "einbau": "Parameter Startjahr, Endjahr, Bundesland anlegen",
+      "lvl": 4
+    },
+    {
+      "datei": "tabellen/zeiterfassung-vorlage.csv",
+      "art": "Tabellenvorlage",
+      "zweck": "Zeiterfassung mit Nachtschicht-Berechnung, gesetzlicher Mindestpause und Prüfhinweis. Aufbewahrungspflicht im Gastgewerbe vermerkt.",
+      "einbau": "Öffnen, Bereich mit Strg+T in eine Tabelle wandeln",
+      "lvl": 2
+    },
+    {
+      "datei": "tabellen/modell-kontrollblock.csv",
+      "art": "Tabellenvorlage",
+      "zweck": "Elf Prüfformeln, die alle WAHR ergeben müssen, plus Gesamtampel für das Dashboard. Fängt die Fehler, die sonst der Empfänger findet.",
+      "einbau": "Als Blatt „00_Kontrolle“ einfügen und Namen anpassen",
+      "lvl": 4
+    }
+  ]
+}

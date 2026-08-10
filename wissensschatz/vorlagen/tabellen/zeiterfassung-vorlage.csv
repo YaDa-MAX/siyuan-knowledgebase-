@@ -1,0 +1,13 @@
+Datum;Person;Beginn;Ende;Pause_Min;Taetigkeit;Bemerkung;Netto_Std;Pflicht_Pause;Hinweis
+2026-08-03;Muster, Anna;06:00;14:30;30;Frühdienst Rezeption;;=REST(E2-D2;1)*24-F2/60;=WENN((REST(E2-D2;1)*24)>9;45;WENN((REST(E2-D2;1)*24)>6;30;0));=WENNS(H2>10;"über 10 h (§3 ArbZG)";F2<I2;"Pause zu kurz";WAHR;"")
+2026-08-03;Beispiel, Ben;14:00;22:30;30;Spätdienst Service;;;;
+2026-08-04;Beispiel, Ben;06:00;14:00;30;Frühdienst;Ruhezeit prüfen: Vorschicht endete 22:30;;;
+2026-08-04;Muster, Anna;22:00;06:30;45;Nachtdienst;über Mitternacht;;;
+;;;;;;;;;
+# Hinweise:;;;;;;;;;
+# Spalte H  Netto-Arbeitszeit:  =REST(Ende-Beginn;1)*24 - Pause/60   (funktioniert über Mitternacht);;;;;;;;;
+# Spalte I  gesetzliche Mindestpause nach § 4 ArbZG;;;;;;;;;
+# Spalte J  Prüfhinweis. Ersetzt keine rechtliche Prüfung.;;;;;;;;;
+# Ruhezeit: 11 h zwischen zwei Schichten, im Gastgewerbe 10 h mit Ausgleich auf 12 h (§ 5 Abs. 2 ArbZG);;;;;;;;;
+# Bereich markieren und mit Strg+T in eine intelligente Tabelle wandeln - dann wachsen die Formeln mit.;;;;;;;;;
+# Aufbewahrung: 2 Jahre (§ 17 MiLoG, Gastgewerbe nach § 2a SchwarzArbG);;;;;;;;;
