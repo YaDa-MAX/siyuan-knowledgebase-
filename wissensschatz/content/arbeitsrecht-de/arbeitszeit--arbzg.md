@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [arbeitszeit, arbzg, ruhezeit, sonntagsarbeit, gastgewerbe, zeiterfassung]
 prereqs: [arbeitsrecht-rechtsquellen]
-related: [arbeitsrecht-jugendarbeitsschutz, arbeitsrecht-verguetung, fuehrung-kennzahlen, excel-datum-zeit]
+related: [arbeitsrecht-jugendarbeitsschutz, arbeitsrecht-dienstplan-pruefer, arbeitsrecht-verguetung, fuehrung-kennzahlen, excel-datum-zeit]
 summary: Höchstarbeitszeit, Pausen, Ruhezeit, Sonn- und Feiertagsarbeit — und die drei Stellen, an denen das Gaststättengewerbe ausdrücklich anders behandelt wird.
 ---
 

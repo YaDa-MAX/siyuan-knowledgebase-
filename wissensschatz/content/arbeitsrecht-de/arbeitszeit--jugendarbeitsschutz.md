@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [jarbschg, minderjaehrige, azubi, gastgewerbe, arbeitszeit]
 prereqs: [arbeitsrecht-arbeitszeit]
-related: [arbeitsrecht-ausbildung, arbeitsrecht-betriebsrat, fuehrung-entwicklung]
+related: [arbeitsrecht-dienstplan-pruefer, arbeitsrecht-ausbildung, arbeitsrecht-betriebsrat, fuehrung-entwicklung]
 summary: Wer als Kind und wer als Jugendlicher gilt, welche Zeiten gelten — und die Gaststätten-Ausnahmen bei Nachtruhe, Schichtzeit, Samstag und Sonntag.
 ---
 

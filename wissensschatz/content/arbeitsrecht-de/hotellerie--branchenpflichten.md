@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [hotellerie, gastgewerbe, zoll, fks, checkliste, dienstplan]
 prereqs: [arbeitsrecht-arbeitszeit, arbeitsrecht-verguetung]
-related: [arbeitsrecht-jugendarbeitsschutz, arbeitsrecht-betriebsrat, arbeitsrecht-abmahnung, fuehrung-kennzahlen]
+related: [arbeitsrecht-jugendarbeitsschutz, arbeitsrecht-dienstplan-pruefer, arbeitsrecht-betriebsrat, arbeitsrecht-abmahnung, fuehrung-kennzahlen]
 summary: Was in dieser Branche anders ist — Sofortmeldung, Aufzeichnung, Zollprüfung, Dienstplanregeln und eine Prüfliste für den Betrieb.
 ---
 

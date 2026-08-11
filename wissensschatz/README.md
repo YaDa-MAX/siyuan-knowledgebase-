@@ -22,7 +22,7 @@ Nach Änderungen am Inhalt:
 ```bash
 cd wissensschatz
 node tools/build.mjs   # Index neu bauen
-node tools/test.mjs    # Selbsttest
+node tools/test.mjs    # Selbsttest, inklusive der Regeln des Dienstplan-Prüfers
 ```
 
 Node.js ≥ 18, keine Abhängigkeiten.
@@ -49,6 +49,40 @@ Office Scripts, Power-Query-Abfragen und Tabellenvorlagen.
 Fließtext nur umständlich erklärt — etwa alle Bajonette auf einer Auflagemaß-Achse
 mit der Richtung der Adaptierbarkeit, oder denselben Spätdienst unter drei
 Arbeitszeitregimen mit dem jeweils frühesten nächsten Dienstbeginn.
+
+---
+
+## Dienstplan prüfen
+
+Der Menüpunkt **Dienstplan** ist die Brücke von der Theorie in den konkreten Fall —
+den Schritt, den Karteikarten nicht leisten. Schichten eintragen, und jeder Befund
+nennt den Paragrafen, die konkrete Zahl und den Knoten, der die Regel erklärt.
+
+Geprüft werden **ArbZG** (Höchstarbeitszeit, Pausen, Ruhezeit, Nachtarbeit, Sonn- und
+Feiertagsarbeit, Wochenarbeitszeit) und **JArbSchG** (Dauer, Pausen, Schichtzeit,
+Freizeit, Nachtruhe, Fünf-Tage-Woche, Samstags-, Sonntags- und Feiertagsruhe) —
+jeweils mit den Branchenausnahmen des Gastgewerbes. Die Feiertage werden je Bundesland
+aus dem Datensatz `feiertage-de` berechnet, Ostern über den gregorianischen Osteralgorithmus.
+
+Zwei Dinge, die das Werkzeug von einer Checkliste unterscheiden:
+
+- **Die Ausgleichsbilanz nach § 5 Abs. 2 ArbZG.** Verkürzte Ruhezeit im Gastgewerbe ist
+  nur zulässig, wenn *jede* Verkürzung durch eine Ruhezeit von 12 Stunden ausgeglichen
+  wird. Der Prüfer rechnet das je Kalendermonat gegen — genau die Stelle, an der
+  Dienstpläne der Branche kippen.
+- **Der geteilte Dienst.** 11–14 Uhr und 17–22 Uhr sind ein Arbeitstag mit Unterbrechung,
+  nicht zwei Arbeitstage mit drei Stunden Ruhezeit. Wer das nicht trennt, meldet jeden
+  zweiten Dienstplan fälschlich als rechtswidrig und wird nach dem dritten Fehlalarm
+  ignoriert.
+
+> **Prüfhilfe, kein Rechtsrat.** Ein Ergebnis ohne Befunde heißt „hier ist nichts
+> aufgefallen", nicht „das ist zulässig". Die Liste dessen, was **nicht** geprüft wird —
+> allen voran Tarifverträge — steht unter jedem Ergebnis und im Knoten
+> *Dienstplan prüfen — Regeln, Grenzen und die Fallen der Branche*.
+
+Die Regeln liegen in `web/dienstplan.js`, getrennt von der Oberfläche, und werden von
+`node tools/test-dienstplan.mjs` gegen 66 Fälle geprüft — solche, die auslösen **müssen**,
+und solche, die es **nicht dürfen**. Der Selbsttest startet sie mit.
 
 > **Zum Arbeitsrecht:** Aufbereitete Theorie zum Stand der Recherche, kein Rechtsrat.
 > Beträge, Fristen und Rechtsprechung ändern sich — vor jeder Anwendung prüfen.
@@ -174,8 +208,9 @@ gesichert. `tresor/` und Schlüsseldateien sind von der Versionsverwaltung ausge
 wissensschatz/
   content/          Wissen (Markdown) + _data/ (Referenzdatensätze) + _topics.json
   vorlagen/         VBA · SQL · Office Scripts · Power Query · Tabellen
-  tools/            build.mjs · feed.mjs · test.mjs · lib/
-  web/              index.html · app.js · viz.js · diagramme.js · vault.js · app.css · kb-data.js
+  tools/            build.mjs · feed.mjs · test.mjs · test-dienstplan.mjs · lib/
+  web/              index.html · app.css · app.js · kb-data.js (erzeugt)
+                    viz.js · diagramme.js · dienstplan.js · dienstplan-ui.js · vault.js
   tresor/           verschlüsselte Sicherungen (nicht versioniert)
   .state/           Gedächtnis des Builds für die Neubewertung
 ```
@@ -192,3 +227,4 @@ wissensschatz/
 | virtuelle Gruppen | Umstrukturierung ohne Dateiverschiebungen, jederzeit umkehrbar |
 | Herkunft am Knoten | eigene Erfahrung von nachproduzierbarem Wissen unterscheidbar halten |
 | Tresor im Browser | Geheimnisse verlassen das Gerät nie |
+| Prüfregeln getrennt von der Oberfläche | dieselbe Datei läuft im Browser und im Selbsttest — Regeln über geltendes Recht müssen prüfbar sein, nicht behauptet |

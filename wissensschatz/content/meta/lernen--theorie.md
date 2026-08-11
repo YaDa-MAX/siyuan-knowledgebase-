@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [lernen, wiederholung, abrufen, gedaechtnis, srs]
 prereqs: [meta-start]
-related: [meta-fuettern, fuehrung-entwicklung, meta-wissensarchitektur]
+related: [meta-fuettern, fuehrung-entwicklung, meta-wissensarchitektur, arbeitsrecht-dienstplan-pruefer]
 summary: Abrufen schlägt Wiederlesen, verteiltes Üben schlägt Blocken — und warum sich Lernen richtig anfühlt, wenn es gerade nicht wirkt.
 ---
 

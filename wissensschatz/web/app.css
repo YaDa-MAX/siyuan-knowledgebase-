@@ -289,10 +289,14 @@ tbody tr:hover { background: var(--bg-3); }
 .knopf:disabled { opacity: .45; cursor: default; }
 .knopf.klein { padding: 4px 10px; font-size: 0.8rem; }
 
-select, input[type="text"], input[type="password"], input[type="number"], textarea {
+select, input[type="text"], input[type="password"], input[type="number"],
+input[type="date"], input[type="time"], textarea {
   background: var(--bg-2); border: 1px solid var(--line); color: var(--ink);
   border-radius: 7px; padding: 7px 11px; font: inherit; font-size: 0.9rem; width: 100%;
 }
+/* Datum und Uhrzeit brauchen nur so viel Platz, wie das Format verlangt —
+   volle Breite ließe die Dienstplantabelle unnötig auseinanderlaufen. */
+input[type="date"], input[type="time"] { width: auto; min-width: 8.5em; }
 select:focus, input:focus, textarea:focus { outline: none; border-color: var(--akzent); }
 label.feld { display: block; margin-bottom: 12px; }
 label.feld > span { display: block; font-size: 0.82rem; color: var(--ink-2); margin-bottom: 4px; }

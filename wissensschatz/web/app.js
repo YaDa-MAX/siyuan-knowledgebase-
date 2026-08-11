@@ -18,6 +18,7 @@
     { id: "wissen", label: "Wissen" },
     { id: "lernen", label: "Lernen" },
     { id: "karte", label: "Karte" },
+    { id: "dienstplan", label: "Dienstplan" },
     { id: "organisation", label: "Selbstorganisation" },
     { id: "luecken", label: "Lücken" },
     { id: "tresor", label: "Tresor" },
@@ -70,6 +71,7 @@
       case "wissen":       return seiteWissen(arg);
       case "lernen":       return seiteLernen();
       case "karte":        return seiteKarte();
+      case "dienstplan":   return DIENSTPLAN_UI.zeichnen(app);
       case "organisation": return seiteOrganisation();
       case "luecken":      return seiteLuecken();
       case "tresor":       return VAULT.zeichnen(app);

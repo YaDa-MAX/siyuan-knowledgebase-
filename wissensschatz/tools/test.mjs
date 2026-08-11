@@ -13,6 +13,7 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { walk, loadNode, TYPES, STATUS, SOURCES } from "./lib/parse.mjs";
@@ -197,6 +198,21 @@ pruefe("jede Fachgrafik wird in mindestens einem Knoten gezeigt", ungenutzt.leng
 console.log(`  Hinweis: ${eingebunden.size} Fachgrafiken und ` +
   `${[...new Set(nodes.flatMap((n) => n.viz.map((v) => v.name)))].length - eingebunden.size}` +
   ` Datensatztabellen eingebunden.`);
+
+/* ------------------------------------------------------- Dienstplan-Prüfer */
+
+/*
+ * Die Regeln des Dienstplan-Prüfers haben ihren eigenen, ausführlichen Test.
+ * Er wird von hier aus mitgestartet, damit es einen Befehl gibt und nicht zwei
+ * — eine zweite Testdatei, an die man denken muss, wird irgendwann nicht mehr
+ * ausgeführt, und dann rechnet ein Werkzeug jahrelang unbemerkt falsch.
+ */
+console.log("\nDienstplan-Prüfer");
+const dp = spawnSync(process.execPath, [join(ROOT, "tools", "test-dienstplan.mjs")], { encoding: "utf8" });
+const dpZeile = (dp.stdout || "").trim().split("\n").pop() || "";
+const dpFehler = (dp.stdout || "").split("\n").filter((z) => z.includes("FEHL"));
+pruefe(`Regeltest bestanden (${dpZeile})`, dp.status === 0,
+  dpFehler.join(" · ") || (dp.stderr || "").slice(0, 200));
 
 /* ------------------------------------------------------------ Ergebnis */
 
