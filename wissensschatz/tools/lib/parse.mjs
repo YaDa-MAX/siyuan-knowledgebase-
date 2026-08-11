@@ -140,9 +140,11 @@ export function loadNode(file, contentRoot) {
     topic: path.split("/")[0],
     declaredLevel: level,
     level, // wird vom Rebalancer überschrieben
-    tags: meta.tags || [],
-    prereqs: meta.prereqs || [],
-    related: meta.related || [],
+    tags: [...new Set(meta.tags || [])],
+    // Verweise entdoppeln und Selbstbezüge entfernen — beides entsteht beim
+    // Umbenennen von IDs per Suchen-und-Ersetzen und ist sonst schwer zu sehen.
+    prereqs: [...new Set(meta.prereqs || [])].filter((r) => r !== String(meta.id)),
+    related: [...new Set(meta.related || [])].filter((r) => r !== String(meta.id)),
     type,
     source,
     status,

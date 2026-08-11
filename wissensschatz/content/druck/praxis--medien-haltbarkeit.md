@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [papier, medien, archivierung, haltbarkeit, normen]
 prereqs: [druck-verfahren]
-related: [druck-farbmanagement, foto-filter, meta-sicherung]
+related: [druck-farbmanagement, foto-filter, meta-pflegeroutine]
 summary: Papiersorten und ihre Wirkung, Grammatur und Formate, und was ein Druck braucht, um hundert Jahre zu überstehen.
 ---
 

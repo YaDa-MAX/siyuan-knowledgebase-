@@ -33,14 +33,14 @@ Node.js ≥ 18, keine Abhängigkeiten.
 
 | Thema | Umfang |
 |---|---|
-| **Excel** | Bezüge, Formelsprache, dynamische Arrays, LET/LAMBDA, Pivot, Power Query, Datenmodell, Diagramme, Dashboards, VBA, Office Scripts, SQL, Performance, Modellarchitektur — plus komplette Funktionsreferenz |
+| **Excel** | Bezüge, Formelsprache, dynamische Arrays, LET/LAMBDA, Pivot, Power Query, Datenmodell, Diagramme, Dashboards, VBA, Office Scripts, SQL, Finanzmathematik, Performance, Modellarchitektur — plus Funktionsreferenz, Kompatibilitätsfunktionen und Feiertagsdatensatz |
 | **Power BI** | Komponenten und Lizenzen, Sternschema, Beziehungen, Kalendertabelle, DAX-Auswertungskontext, CALCULATE, Iteratoren, Zeitintelligenz, Visuals, VertiPaq-Performance, RLS und Betrieb |
-| **Fotografie** | Belichtungsdreieck, Schärfentiefe und Beugung, Verschluss und Bewegung, ISO und Dynamik, Optik und Perspektive, Sensorformate, Autofokus und Messung, Licht und Weißabgleich, Blitz, Filter, Abbildungsfehler — plus Bajonett- und Adapterdatenbank, Objektivkürzel aller Hersteller und 35 Motivrezepte |
-| **Druck** | 21 Druckverfahren von Thermodirekt bis Tiefdruck, Entscheidungshilfe nach Aufgabe, Farbmanagement und Druckvorstufe, Medien und Archivbeständigkeit |
-| **Prozessautomation** | Prozessanalyse und BPMN, Automatisierbarkeit und ROI, Werkzeugleiter von der Formel bis zum KI-Agenten, Power Platform, Einführung, Governance und Mitbestimmung |
-| **Führung & HR** | Führungs- und Motivationstheorien, Führungsstile und Delegation, Gesprächsführung, Entwicklungsbegleitung, Team- und Konfliktdynamik, HR-Kennzahlen inkl. Hotelkennzahlen |
+| **Fotografie** | Belichtungsdreieck, Schärfentiefe und Beugung, Verschluss und Bewegung, ISO und Dynamik, Optik und Perspektive, Sensorformate, Autofokus und Messung, Licht und Weißabgleich, Blitz, Filter, Abbildungsfehler — plus Bajonett- und Adapterdatenbank, Objektivkürzel aller Hersteller, 35 Motivrezepte und acht Motiv-Vertiefungen (Landschaft, Porträt, Sport/Wildlife, Astro, Architektur, Nacht, Produkt, Event) |
+| **Druck** | Grundbegriffe, 21 Druckverfahren von Thermodirekt bis Tiefdruck, Entscheidungshilfe nach Aufgabe, Farbmanagement und Druckvorstufe, Medien und Archivbeständigkeit, Etiketten und Kennzeichnung, Großformat und Werbetechnik, Fine-Art-Fotodruck |
+| **Prozessautomation** | Kleine Hebel für den Einstieg, Prozessanalyse und BPMN, Automatisierbarkeit und ROI, Werkzeugleiter, Power Platform, KI im Prozess mit Grenzen und Absicherung, Einführung, Governance und Mitbestimmung |
+| **Führung & HR** | Die ersten 100 Tage, Führungs- und Motivationstheorien, Führungsstile und Delegation, Gesprächsführung, Entwicklungsbegleitung, Team- und Konfliktdynamik, Vergütung und Anreize, Recruiting und Bindung, Selbstführung, HR-Kennzahlen inkl. Hotelkennzahlen |
 | **Arbeitsrecht DE** | Rechtsquellen, Vertrag und Befristung, Arbeitszeit mit den Gaststätten-Ausnahmen, Jugendarbeitsschutz, Vergütung und Mindestlohn, Urlaub und Krankheit, Mutterschutz und Schwerbehinderung, Betriebsrat und Arbeitsschutz, Ausbildung, Beendigung — mit durchgehendem Fokus Hotellerie |
-| **Meta** | Aufbau, Fütterungswege, Pflegeroutine, Sicherung, Tresor und Übergabe |
+| **Meta** | Aufbau, Fütterungswege, Pflegeroutine, Sicherung, Tresor und Übergabe, Lerntheorie hinter dem Lernmodus, Wissensarchitektur, Anleitung für neue Themengebiete |
 
 Dazu einsatzfertige Vorlagen unter `vorlagen/`: VBA-Module, SQL-Referenzen,
 Office Scripts, Power-Query-Abfragen und Tabellenvorlagen.

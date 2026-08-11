@@ -1,0 +1,36 @@
+{
+  "title": "Gesetzliche Feiertage in Deutschland",
+  "topic": "excel",
+  "note": "Kürzel: BW Baden-Württemberg · BY Bayern · BE Berlin · BB Brandenburg · HB Bremen · HH Hamburg · HE Hessen · MV Mecklenburg-Vorpommern · NI Niedersachsen · NW Nordrhein-Westfalen · RP Rheinland-Pfalz · SL Saarland · SN Sachsen · ST Sachsen-Anhalt · SH Schleswig-Holstein · TH Thüringen. Feiertagsrecht ist Landesrecht und ändert sich — vor der Verwendung in Abrechnung oder Dienstplanung gegen die Landesverordnung prüfen.",
+  "columns": [
+    { "key": "tag", "label": "Feiertag" },
+    { "key": "regel", "label": "Termin / Regel" },
+    { "key": "os", "label": "Ostern ±", "type": "num" },
+    { "key": "laender", "label": "Bundesländer" },
+    { "key": "n", "label": "Anzahl", "type": "num" },
+    { "key": "txt", "label": "Anmerkung" }
+  ],
+  "items": [
+    { "tag": "Neujahr", "regel": "1. Januar", "os": null, "laender": "bundesweit", "n": 16, "txt": "Für Jugendliche absolutes Beschäftigungsverbot (§ 18 JArbSchG)." },
+    { "tag": "Heilige Drei Könige", "regel": "6. Januar", "os": null, "laender": "BW, BY, ST", "n": 3, "txt": "" },
+    { "tag": "Internationaler Frauentag", "regel": "8. März", "os": null, "laender": "BE, MV", "n": 2, "txt": "Berlin seit 2019, Mecklenburg-Vorpommern seit 2023." },
+    { "tag": "Karfreitag", "regel": "beweglich", "os": -2, "laender": "bundesweit", "n": 16, "txt": "Stiller Feiertag mit Tanzverbot — Umfang je Land verschieden, für Gastronomie relevant." },
+    { "tag": "Ostersonntag", "regel": "beweglich", "os": 0, "laender": "BB (gesetzlich), sonst faktisch", "n": 1, "txt": "Nur in Brandenburg gesetzlicher Feiertag; anderswo als Sonntag ohnehin geschützt." },
+    { "tag": "Ostermontag", "regel": "beweglich", "os": 1, "laender": "bundesweit", "n": 16, "txt": "Für Jugendliche gilt das absolute Verbot nur am Ostersonntag, nicht am Montag." },
+    { "tag": "Tag der Arbeit", "regel": "1. Mai", "os": null, "laender": "bundesweit", "n": 16, "txt": "Für Jugendliche absolutes Beschäftigungsverbot (§ 18 JArbSchG)." },
+    { "tag": "Christi Himmelfahrt", "regel": "beweglich", "os": 39, "laender": "bundesweit", "n": 16, "txt": "Immer ein Donnerstag — Brückentag Freitag ist der stärkste Urlaubsengpass des Jahres." },
+    { "tag": "Pfingstsonntag", "regel": "beweglich", "os": 49, "laender": "BB (gesetzlich), sonst faktisch", "n": 1, "txt": "" },
+    { "tag": "Pfingstmontag", "regel": "beweglich", "os": 50, "laender": "bundesweit", "n": 16, "txt": "" },
+    { "tag": "Fronleichnam", "regel": "beweglich", "os": 60, "laender": "BW, BY, HE, NW, RP, SL", "n": 6, "txt": "In Teilen von SN und TH zusätzlich in einzelnen Gemeinden — kommunal geregelt." },
+    { "tag": "Mariä Himmelfahrt", "regel": "15. August", "os": null, "laender": "SL, BY (teilweise)", "n": 2, "txt": "In Bayern nur in Gemeinden mit überwiegend katholischer Bevölkerung — die einzige Regel, die auf Gemeindeebene zählt." },
+    { "tag": "Weltkindertag", "regel": "20. September", "os": null, "laender": "TH", "n": 1, "txt": "Seit 2019." },
+    { "tag": "Tag der Deutschen Einheit", "regel": "3. Oktober", "os": null, "laender": "bundesweit", "n": 16, "txt": "" },
+    { "tag": "Reformationstag", "regel": "31. Oktober", "os": null, "laender": "BB, HB, HH, MV, NI, SN, ST, SH, TH", "n": 9, "txt": "Seit 2018 in den norddeutschen Ländern." },
+    { "tag": "Allerheiligen", "regel": "1. November", "os": null, "laender": "BW, BY, NW, RP, SL", "n": 5, "txt": "Stiller Feiertag." },
+    { "tag": "Buß- und Bettag", "regel": "Mittwoch vor dem 23. November", "os": null, "laender": "SN", "n": 1, "txt": "Rechenregel: letzter Mittwoch vor dem 23.11. In allen anderen Ländern 1995 zugunsten der Pflegeversicherung gestrichen." },
+    { "tag": "1. Weihnachtstag", "regel": "25. Dezember", "os": null, "laender": "bundesweit", "n": 16, "txt": "Für Jugendliche absolutes Beschäftigungsverbot (§ 18 JArbSchG)." },
+    { "tag": "2. Weihnachtstag", "regel": "26. Dezember", "os": null, "laender": "bundesweit", "n": 16, "txt": "" },
+    { "tag": "Heiligabend", "regel": "24. Dezember", "os": null, "laender": "kein gesetzlicher Feiertag", "n": 0, "txt": "Oft tariflich oder betrieblich frei. Steuerfreier Zuschlag nach § 3b EStG erst ab 14 Uhr." },
+    { "tag": "Silvester", "regel": "31. Dezember", "os": null, "laender": "kein gesetzlicher Feiertag", "n": 0, "txt": "Wie Heiligabend: Zuschlagsbegünstigung ab 14 Uhr, aber kein Feiertag im Sinne des ArbZG." }
+  ]
+}

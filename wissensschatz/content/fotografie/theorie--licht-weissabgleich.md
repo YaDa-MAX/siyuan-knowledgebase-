@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [licht, weissabgleich, farbtemperatur, farbraum]
 prereqs: [foto-belichtungsdreieck]
-related: [foto-blitz, foto-dateiformate, druck-farbmanagement]
+related: [foto-blitz, foto-filter, druck-farbmanagement]
 summary: Kelvin, Tint und Mischlicht — und die Eigenschaften von Licht, die über die Bildwirkung entscheiden: Richtung, Größe, Härte, Farbe.
 ---
 

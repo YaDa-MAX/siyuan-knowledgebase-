@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [muschg, beeg, pflegezeit, sgb-ix, schutzrechte]
 prereqs: [arbeitsrecht-vertrag]
-related: [arbeitsrecht-arbeitszeit, arbeitsrecht-beendigung, arbeitsrecht-arbeitsschutz]
+related: [arbeitsrecht-arbeitszeit, arbeitsrecht-beendigung, arbeitsrecht-betriebsrat]
 summary: Die besonderen Schutzrechte — Fristen, Beschäftigungsverbote und was sie für die Dienstplanung im Gastgewerbe bedeuten.
 ---
 

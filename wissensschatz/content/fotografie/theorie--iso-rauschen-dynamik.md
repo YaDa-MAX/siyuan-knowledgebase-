@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [iso, rauschen, dynamikumfang, sensor, raw]
 prereqs: [foto-belichtungsdreieck]
-related: [foto-messung-histogramm, foto-sensorformate, foto-motiv-astro]
+related: [foto-fokus-messung, foto-sensorformate, foto-motiv-astro]
 summary: ISO verstärkt, es sammelt kein Licht. Warum Unterbelichten schlimmer ist als hohes ISO, und was Dual-Gain-Sensoren daran ändern.
 ---
 

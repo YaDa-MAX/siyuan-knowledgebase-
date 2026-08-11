@@ -77,9 +77,15 @@ Ostersonntag =DATUM(J;3;1)+REST(255-11*REST(J;19);32)+21
               +7-WOCHENTAG(DATUM(J;3;1)+REST(255-11*REST(J;19);32)+21;2)
 ```
 
-Davon abgeleitet: Karfreitag −2, Ostermontag +1, Christi Himmelfahrt +39, Pfingstmontag +50, Fronleichnam +60. In der Praxis besser: eine gepflegte Feiertagstabelle je Bundesland als intelligente Tabelle — das ist prüfbar und übersteht jeden Sonderfall (Buß- und Bettag, Reformationstag, regionale Feiertage).
+Davon abgeleitet werden alle beweglichen Feiertage als Versatz zum Ostersonntag.
 
-> TODO: Feiertagstabelle je Bundesland als Datensatz ergänzen
+::: viz dataset:feiertage-de
+Alle gesetzlichen Feiertage mit Termin, Osterversatz und den Ländern, in denen sie gelten.
+:::
+
+**Für den produktiven Einsatz gilt trotzdem:** Eine gepflegte Feiertagstabelle als intelligente Tabelle im Modell ist der Formel vorzuziehen. Sie ist prüfbar, und sie übersteht die Sonderfälle, an denen jede Formel scheitert — den Buß- und Bettag (Mittwoch vor dem 23.11., nur Sachsen), Mariä Himmelfahrt (in Bayern **gemeindeabhängig**) und Fronleichnam in einzelnen Gemeinden von Sachsen und Thüringen.
+
+Die fertige Tabelle mit Feiertagsberechnung je Bundesland liegt als Power-Query-Vorlage bereit: `vorlagen/powerquery/kalender.pq`. Sie erzeugt einen vollständigen Kalender mit Osterformel, Feiertagsspalte und Arbeitstagskennzeichen.
 
 ## Textdatum sanieren
 

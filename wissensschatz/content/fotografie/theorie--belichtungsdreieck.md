@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [belichtung, blende, verschlusszeit, iso, grundlagen]
 prereqs: []
-related: [foto-blende-schaerfentiefe, foto-verschlusszeit, foto-iso-rauschen, foto-messung-histogramm]
+related: [foto-blende-schaerfentiefe, foto-verschlusszeit, foto-iso-rauschen, foto-fokus-messung]
 summary: Drei Stellgrößen, ein Lichtwert. Jede Änderung um eine Stufe verdoppelt oder halbiert die Lichtmenge — und hat je eine eigene Nebenwirkung auf das Bild.
 ---
 

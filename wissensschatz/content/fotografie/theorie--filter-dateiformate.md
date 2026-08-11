@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [filter, raw, jpeg, dateiformate, archivierung]
 prereqs: [foto-belichtungsdreieck]
-related: [foto-licht-wb, foto-motiv-landschaft, meta-sicherung]
+related: [foto-licht-wb, foto-motiv-landschaft, meta-pflegeroutine]
 summary: Welche Filter durch Software nicht ersetzbar sind, und welches Dateiformat ein Bild in 40 Jahren noch lesbar hält.
 ---
 
