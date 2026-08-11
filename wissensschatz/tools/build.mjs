@@ -13,7 +13,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { walk, loadNode, LEVEL_NAMES } from "./lib/parse.mjs";
+import { walk, loadNode, ohneCode, LEVEL_NAMES } from "./lib/parse.mjs";
 import { rebalanceLevels, buildTree, CONFIG } from "./lib/organize.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -98,7 +98,7 @@ for (const n of nodes) {
 
 // Offene Punkte, die im Text markiert wurden
 for (const n of nodes) {
-  const todos = n.body.match(/^>\s*TODO:\s*(.+)$/gim) || [];
+  const todos = ohneCode(n.body).match(/^>\s*TODO:\s*(.+)$/gim) || [];
   for (const t of todos) gaps.push({ kind: "todo", node: n.id, missing: t.replace(/^>\s*TODO:\s*/i, ""), topic: n.topic });
 }
 

@@ -45,6 +45,9 @@ Kleinere Zahl = größere Öffnung = mehr Licht. Die Blendenzahl ist ein Verhäl
 
 Moderne Kameras arbeiten meist in Drittelstufen, weshalb dazwischen Werte wie f/3,2 oder 1/160 s liegen.
 
+::: viz belichtungsdreieck
+:::
+
 ## Äquivalente Einstellungen
 
 Alle folgenden Kombinationen ergeben dieselbe Helligkeit:

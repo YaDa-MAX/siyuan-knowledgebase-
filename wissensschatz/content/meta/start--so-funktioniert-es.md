@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-10
 tags: [anleitung, konventionen, einstieg]
 prereqs: []
-related: [meta-fuettern, meta-pflegeroutine, meta-pflegeroutine, meta-uebergabe]
+related: [meta-fuettern, meta-pflegeroutine, meta-uebergabe, meta-lerntheorie]
 summary: Aufbau, Bedienung und die drei Mechanismen, die dafür sorgen, dass sich das Archiv beim Wachsen selbst neu ordnet.
 ---
 
@@ -59,12 +59,19 @@ summary: Ein Satz.
 ## Kern
 Fließtext …
 
+::: viz bajonett-skala
+:::
+
+::: viz dataset:excel-funktionen
+Bildunterschrift — nur bei Datensätzen üblich; Fachgrafiken bringen ihre eigene mit.
+:::
+
 ::: quiz
 F: Prüffrage
 A: Antwort
 :::
 
-> TODO: Beispiel für ein `::: viz`-Diagramm ergänzen, sobald weitere Fachgrafiken vorliegen
+> TODO: was hier noch fehlt
 ```
 
 Die `id` ist der Anker. Alles andere darf sich ändern — die `id` bleibt, damit Verweise über Jahre halten.

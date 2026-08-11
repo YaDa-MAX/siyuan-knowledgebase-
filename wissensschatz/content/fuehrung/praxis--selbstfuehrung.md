@@ -30,6 +30,9 @@ Die Eisenhower-Unterscheidung ist bekannt und wird trotzdem selten angewendet �
 | **Wichtig** | sofort erledigen (Krise, Frist) | **hier entsteht Führung**: Entwicklung, Planung, Gespräche, Prävention |
 | **Nicht wichtig** | delegieren (Störung, manche Mail) | streichen |
 
+::: viz eisenhower
+:::
+
 Der entscheidende Satz: **Das Feld „wichtig, nicht dringend" meldet sich nie von selbst.** Niemand klopft an und sagt, dass jetzt die Zeit für ein Entwicklungsgespräch wäre. Deshalb muss es einen festen Termin haben, sonst findet es nicht statt.
 
 Die Umsetzung ist ein Kalendereintrag, der wie ein Termin mit einer anderen Person behandelt wird — nicht verschiebbar, nicht überbuchbar. Zwei bis vier Stunden pro Woche. Wer das nicht schafft, macht keine Führungsarbeit, sondern Störungsbearbeitung.

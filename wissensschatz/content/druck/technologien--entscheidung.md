@@ -39,6 +39,11 @@ summary: Von der Aufgabe zum Verfahren — inklusive der Kostenfallen, die beim 
 | Prototyp, Ersatzteil, Vorrichtung | 3D-FDM | schnell und günstig |
 | Feines Modell, Dentaltechnik | 3D-SLA | Detailtreue |
 
+**Bei Druckaufträgen entscheidet die Auflage vor der Qualität.** Zwei Zeilen der Tabelle — Flyer bis 500 gegen Flyer ab 1000 — sind derselbe Auftrag in anderer Stückzahl, und trotzdem ein anderes Verfahren. Der Grund liegt allein in der Kostenstruktur:
+
+::: viz auflagenkurve
+:::
+
 ## Die Kostenrechnung, die man vor dem Kauf macht
 
 Der Gerätepreis ist selten die relevante Zahl. Die Rechnung geht so:

@@ -59,6 +59,9 @@ Neun Stufen in drei Ebenen. Die Kenntnis der Stufe bestimmt die richtige Interve
 **Ebene 3 — lose/lose (7–9)**: 7 begrenzte Vernichtung, 8 Zersplitterung, 9 gemeinsam in den Abgrund.
 → Machteingriff. Trennung, Versetzung, Entscheidung von oben. Der eigene Schaden wird in Kauf genommen, um den anderen zu schädigen.
 
+::: viz glasl-eskalation
+:::
+
 Die praktische Lehre: **Frühe Konflikte kosten wenig, späte kosten alles.** Der häufigste Führungsfehler ist Zuwarten in Stufe 1 bis 3, wo eine halbe Stunde Gespräch genügt hätte.
 
 ## Veränderung

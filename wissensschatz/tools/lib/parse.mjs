@@ -75,26 +75,49 @@ export function parseFrontmatter(raw, file) {
  *   ::: warn
  *   Text
  *   :::
+ *
+ * Codeblöcke bleiben unangetastet: Knoten, die die Syntax *erklären*, zeigen
+ * sie in einem ```-Block. Ohne diesen Schutz wandert das Beispiel als echte
+ * Lernkarte in den Wiederholungsplan — genau das ist einmal passiert.
  */
 export function extractBlocks(body) {
   const quiz = [];
   const viz = [];
-  const text = body.replace(/^:::[ \t]*(\w[\w-]*)[ \t]*([^\n]*)\n([\s\S]*?)^:::[ \t]*$/gm, (all, kind, arg, inner) => {
+
+  // Codeblöcke gegen einen Platzhalter tauschen, der die Blockregex nicht trifft.
+  const codeBloecke = [];
+  let geschuetzt = String(body).replace(/^```[\s\S]*?^```[ \t]*$/gm, (block) => {
+    codeBloecke.push(block);
+    return `@@CODE:${codeBloecke.length - 1}@@`;
+  });
+
+  const zurueck = (s) => s.replace(/@@CODE:(\d+)@@/g, (_, i) => codeBloecke[+i]);
+
+  let text = geschuetzt.replace(/^:::[ \t]*(\w[\w-]*)[ \t]*([^\n]*)\n([\s\S]*?)^:::[ \t]*$/gm, (all, kind, arg, inner) => {
     if (kind === "quiz") {
       const pairs = inner.split(/\n(?=F:)/);
       for (const p of pairs) {
         const q = p.match(/F:\s*([\s\S]*?)(?:\nA:\s*([\s\S]*))?$/);
-        if (q && q[1] && q[2]) quiz.push({ q: q[1].trim(), a: q[2].trim() });
+        if (q && q[1] && q[2]) quiz.push({ q: zurueck(q[1]).trim(), a: zurueck(q[2]).trim() });
       }
       return ""; // Quiz erscheint in der App als Lernkarte, nicht im Fließtext
     }
     if (kind === "viz") {
-      viz.push({ name: arg.trim(), caption: inner.trim() });
+      viz.push({ name: arg.trim(), caption: zurueck(inner).trim() });
       return `\n@@VIZ:${viz.length - 1}@@\n`;
     }
     return all;
   });
-  return { text, quiz, viz };
+
+  return { text: zurueck(text), quiz, viz };
+}
+
+/**
+ * Fließtext ohne Codeblöcke — für alles, was den Text nach Marken absucht.
+ * Ein `> TODO:` in einem Beispielblock ist eine Erklärung, keine offene Aufgabe.
+ */
+export function ohneCode(text) {
+  return String(text).replace(/^```[\s\S]*?^```[ \t]*$/gm, "");
 }
 
 /** Alle .md-Dateien unterhalb von dir einsammeln. */

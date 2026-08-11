@@ -24,6 +24,9 @@ Daraus folgt die gesamte Ordnung des Marktes:
 - Adapter mit **Korrekturlinse** ermöglichen die verbotene Richtung, kosten aber Bildqualität und meist eine Blendenstufe.
 - **Speedbooster / Focal Reducer** gehen den umgekehrten Weg: Sie stauchen den Kleinbild-Bildkreis auf APS-C oder MFT, verkürzen die Brennweite um etwa 0,71× und **gewinnen** dabei rund eine Blendenstufe. Ein 50 mm f/1,8 wird an MFT zu etwa 35 mm f/1,2 mit Kleinbild-Bildwinkel von 70 mm.
 
+::: viz bajonett-skala
+:::
+
 ::: viz dataset:kamera-bajonette
 Nach Auflagemaß sortiert: Was oben steht, passt (mit Adapter) an alles, was darunter steht.
 :::

@@ -22,6 +22,9 @@ Ein Sternschema trennt zwei Arten von Tabellen:
 
 Beziehungen laufen 1:n von der Dimension zur Faktentabelle. Filter fließen von der Dimension in den Fakt.
 
+::: viz sternschema
+:::
+
 ## Warum nicht einfach eine breite Tabelle?
 
 Die flache Tabelle ist verlockend, weil sie in Excel funktioniert hat. Im Tabular-Modell kostet sie:

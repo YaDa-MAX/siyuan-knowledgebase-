@@ -118,31 +118,41 @@ Der Knoten, der einen Datensatz einbindet, sollte `type: referenz` tragen — da
 
 ## Schritt 6 — Eigene Visualisierung (optional)
 
-Für Fachgrafiken, die keine Tabelle sind. In `web/viz.js` eine Funktion ergänzen, die ein `<figure class="viz">` zurückgibt, und sie im Verzeichnis `benannt` registrieren:
+Für Fachgrafiken, die keine Tabelle sind. Sie stehen in `web/diagramme.js` — `web/viz.js` bleibt die Darstellungsmechanik, `diagramme.js` enthält das Fachwissen. Dort eine Funktion ergänzen, die über den Helfer `figur()` ein `<figure class="viz">` zurückgibt, und sie unten registrieren:
 
 ```js
 function windrose() {
-  const f = document.createElement("figure");
-  f.className = "viz";
-  f.innerHTML = `<svg viewBox="0 0 400 400" role="img"
-      aria-label="Windrose mit Kursbezeichnungen"> … </svg>`;
-  return f;
+  let s = PFEIL;
+  s += txt(200, 30, "N", { anchor: "middle", weight: 700 });
+  s += linie(200, 40, 200, 360, { stroke: "var(--vz-blau)", sw: 2 });
+  return figur("0 0 400 400", s,
+    "Bildunterschrift, die den Mechanismus erklärt.",
+    "Windrose mit Kursbezeichnungen");   // Text für Screenreader
 }
 
-const benannt = {
-  "exposure-triangle": belichtungsdreieck,
-  "belichtungsdreieck": belichtungsdreieck,
-  "windrose": windrose,          // neu
-};
+Object.assign(VIZ.benannt, {
+  // …
+  "windrose": windrose,
+});
 ```
 
-Aufruf im Knoten: `::: viz windrose`.
+Aufruf im Knoten:
 
-Drei Vorgaben, damit es zum Rest passt:
+```
+::: viz windrose
+:::
+```
+
+**Ohne Bildunterschriftszeile**, denn eine im Knoten angegebene Unterschrift *ersetzt* die der Grafik. Bei Datensätzen ist sie erwünscht, bei Fachgrafiken bringt die Grafik ihre eigene mit.
+
+Vier Vorgaben, damit es zum Rest passt:
 
 - **Reines SVG**, keine Bibliothek, keine Netzanfrage. Das Archiv muss offline und in zwanzig Jahren funktionieren.
-- **`fill="currentColor"`** für Text und Linien, damit die Grafik im hellen wie im dunklen Erscheinungsbild lesbar bleibt.
+- **`fill="currentColor"`** für neutralen Text und neutrale Linien; alles Farbige über die `--vz-*`-Variablen aus `app.css`. Beides schaltet auf das dunkle Erscheinungsbild mit um — ein fester Hexwert ist dort blass oder unlesbar.
 - **`viewBox` statt fester Größe**, damit sie auf jedem Bildschirm skaliert.
+- **Beschriftungen kollisionsfrei setzen.** Wo Werte dicht beieinanderliegen, Textbreiten abschätzen und in Spuren stapeln, statt starr abzuwechseln — sonst wird ausgerechnet die dichteste und damit interessanteste Stelle unlesbar.
+
+`node tools/test.mjs` prüft beide Richtungen: dass jeder eingebundene Name auflösbar ist und dass jede geschriebene Grafik auch irgendwo gezeigt wird.
 
 ## Schritt 7 — Bauen und prüfen
 

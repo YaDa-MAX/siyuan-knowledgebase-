@@ -17,6 +17,9 @@ summary: Die Werkzeugleiter von Vorlage bis Agent — mit der Regel, immer die n
 
 Von einfach nach mächtig. **Die Regel lautet: die niedrigste Stufe nehmen, die reicht.** Jede Stufe höher bedeutet mehr Können, mehr Abhängigkeit und mehr Pflege.
 
+::: viz werkzeugleiter
+:::
+
 | Stufe | Werkzeug | Typischer Einsatz | Grenze |
 |---|---|---|---|
 | 0 | Vorlage, Textbaustein, Serienbrief, Checkliste | wiederkehrende Dokumente | keine Logik |

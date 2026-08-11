@@ -21,6 +21,18 @@
   --schrift:   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono:      "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
   --seite:     1180px;
+
+  /* Palette der Fachgrafiken. Sie steht hier und nicht im Diagrammskript,
+     damit sie dieselbe Umschaltung auf dunkel mitmacht wie der Rest der
+     Oberfläche — feste Hexwerte im SVG sind auf dunklem Grund unlesbar. */
+  --vz-blau:    #3b6ea5;
+  --vz-braun:   #8a5a2b;
+  --vz-gruen:   #2f7d4f;
+  --vz-tuerkis: #2f7d7a;
+  --vz-lila:    #8a4f9e;
+  --vz-orange:  #b4632a;
+  --vz-rot:     #9c3d3d;
+  --vz-grau:    #5a5f70;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +50,15 @@
     --ok:        #6bbd8a;
     --warn:      #e0a066;
     --alarm:     #e08585;
+
+    --vz-blau:    #7fb0e0;
+    --vz-braun:   #d9a066;
+    --vz-gruen:   #6bbd8a;
+    --vz-tuerkis: #5fbdb8;
+    --vz-lila:    #c48fd8;
+    --vz-orange:  #e0a066;
+    --vz-rot:     #e08585;
+    --vz-grau:    #a3a8bb;
   }
 }
 

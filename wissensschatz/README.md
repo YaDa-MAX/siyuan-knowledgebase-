@@ -45,6 +45,11 @@ Node.js ≥ 18, keine Abhängigkeiten.
 Dazu einsatzfertige Vorlagen unter `vorlagen/`: VBA-Module, SQL-Referenzen,
 Office Scripts, Power-Query-Abfragen und Tabellenvorlagen.
 
+**Neun Fachgrafiken** (`web/diagramme.js`) zeigen jeweils einen Mechanismus, den
+Fließtext nur umständlich erklärt — etwa alle Bajonette auf einer Auflagemaß-Achse
+mit der Richtung der Adaptierbarkeit, oder denselben Spätdienst unter drei
+Arbeitszeitregimen mit dem jeweils frühesten nächsten Dienstbeginn.
+
 > **Zum Arbeitsrecht:** Aufbereitete Theorie zum Stand der Recherche, kein Rechtsrat.
 > Beträge, Fristen und Rechtsprechung ändern sich — vor jeder Anwendung prüfen.
 
@@ -170,7 +175,7 @@ wissensschatz/
   content/          Wissen (Markdown) + _data/ (Referenzdatensätze) + _topics.json
   vorlagen/         VBA · SQL · Office Scripts · Power Query · Tabellen
   tools/            build.mjs · feed.mjs · test.mjs · lib/
-  web/              index.html · app.js · viz.js · vault.js · app.css · kb-data.js
+  web/              index.html · app.js · viz.js · diagramme.js · vault.js · app.css · kb-data.js
   tresor/           verschlüsselte Sicherungen (nicht versioniert)
   .state/           Gedächtnis des Builds für die Neubewertung
 ```

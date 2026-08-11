@@ -12,6 +12,7 @@
  * schlimmer als keiner.
  */
 
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { walk, loadNode, TYPES, STATUS, SOURCES } from "./lib/parse.mjs";
@@ -19,6 +20,7 @@ import { rebalanceLevels, buildTree, CONFIG } from "./lib/organize.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const CONTENT = join(ROOT, "content");
+const WEB = join(ROOT, "web");
 
 let bestanden = 0, gescheitert = 0;
 const pruefe = (name, bedingung, detail = "") => {
@@ -136,6 +138,65 @@ for (const n of nodes) {
   if ((n.prereqs || []).some(lauf)) zyklen.push(n.id);
 }
 pruefe("keine Zyklen in den Voraussetzungen", zyklen.length === 0, zyklen.join(", "));
+
+/* ------------------------------------------------------ Visualisierungen */
+
+/*
+ * Gleiche Sorge wie bei der Neugruppierung: Ein `::: viz`-Name, den niemand
+ * registriert hat, erzeugt in der App still eine graue Hinweisbox statt einer
+ * Grafik. Und eine Grafik, die niemand einbindet, ist geschriebener Code ohne
+ * Wirkung. Beide Richtungen werden hier geprüft.
+ */
+console.log("\nVisualisierungen");
+
+// Registrierte Namen aus den Skripten lesen — bewusst textuell, damit der
+// Selbsttest ohne Browser und ohne Modulsystem im Web-Ordner auskommt.
+const skripte = ["viz.js", "diagramme.js"]
+  .filter((f) => existsSync(join(WEB, f)))
+  .map((f) => readFileSync(join(WEB, f), "utf8"))
+  .join("\n");
+// Name -> Zeichenfunktion. Mehrere Namen dürfen auf dieselbe Funktion zeigen
+// (`exposure-triangle` und `belichtungsdreieck` sind dieselbe Grafik); für die
+// Nutzungsprüfung zählt deshalb die Funktion, nicht der einzelne Alias.
+const zeichner = new Map(
+  [...skripte.matchAll(/["']([a-z0-9][a-z0-9-]*)["']\s*:\s*([A-Za-z_$][\w$]*)\s*[,}]/g)]
+    .map((m) => [m[1], m[2]]),
+);
+const registriert = new Set(zeichner.keys());
+
+// Verfügbare Datensätze
+const datenDir = join(CONTENT, "_data");
+const datensaetze = new Set(
+  existsSync(datenDir)
+    ? readdirSync(datenDir).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, ""))
+    : [],
+);
+
+const eingebunden = new Set();
+const unaufloesbar = [];
+for (const n of nodes) {
+  for (const v of n.viz) {
+    const ds = /^dataset:(.+)$/.exec(v.name);
+    if (ds) {
+      if (!datensaetze.has(ds[1].trim())) unaufloesbar.push(`${n.id} → ${v.name}`);
+      continue;
+    }
+    eingebunden.add(v.name);
+    if (!registriert.has(v.name)) unaufloesbar.push(`${n.id} → ${v.name}`);
+  }
+}
+
+pruefe("jede eingebundene Visualisierung ist auflösbar", unaufloesbar.length === 0,
+  unaufloesbar.join(", "));
+
+const genutzteZeichner = new Set([...eingebunden].map((n) => zeichner.get(n)));
+const ungenutzt = [...new Set([...zeichner.values()].filter((fn) => !genutzteZeichner.has(fn)))];
+pruefe("jede Fachgrafik wird in mindestens einem Knoten gezeigt", ungenutzt.length === 0,
+  ungenutzt.join(", ") + " — geschrieben, aber nirgends eingebunden");
+
+console.log(`  Hinweis: ${eingebunden.size} Fachgrafiken und ` +
+  `${[...new Set(nodes.flatMap((n) => n.viz.map((v) => v.name)))].length - eingebunden.size}` +
+  ` Datensatztabellen eingebunden.`);
 
 /* ------------------------------------------------------------ Ergebnis */
 

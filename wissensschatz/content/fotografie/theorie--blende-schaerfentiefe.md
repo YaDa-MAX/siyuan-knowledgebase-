@@ -22,6 +22,9 @@ Vier Größen, in der Reihenfolge ihres Einflusses:
 3. **Brennweite** — längere Brennweite verringert die Schärfentiefe (bei gleichem Abstand).
 4. **Sensorformat** bzw. der zulässige Zerstreuungskreis.
 
+::: viz schaerfentiefe
+:::
+
 Der berühmte Merksatz „bei gleichem Bildausschnitt hängt die Schärfentiefe nur von Blende und Abstand ab" stimmt näherungsweise: Tritt man mit einem 85 mm so weit zurück, dass der Ausschnitt dem eines 50 mm entspricht, gleichen sich die Schärfentiefen weitgehend an. Was sich dabei ändert, ist die **Perspektive** und der Charakter des Hintergrunds.
 
 ## Der Zerstreuungskreis

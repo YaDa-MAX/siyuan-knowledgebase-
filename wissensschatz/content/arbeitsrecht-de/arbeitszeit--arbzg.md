@@ -53,6 +53,9 @@ Das ist die praktisch wichtigste Sonderregel der Branche: Sie ermöglicht den kl
 
 **§ 5 Abs. 3 ArbZG** erlaubt zusätzlich in Krankenhäusern und Pflegeeinrichtungen eine Verrechnung von Kurzarbeitseinsätzen während der Rufbereitschaft.
 
+::: viz arbeitszeit-tag
+:::
+
 ## Sonn- und Feiertagsarbeit
 
 **Grundsatz § 9 ArbZG**: An Sonn- und gesetzlichen Feiertagen von 0 bis 24 Uhr darf nicht gearbeitet werden.
