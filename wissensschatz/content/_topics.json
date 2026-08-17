@@ -34,6 +34,14 @@
     "claim": "Erst verstehen, dann vereinfachen, dann automatisieren",
     "desc": "Prozessanalyse, Automatisierbarkeit, Werkzeugwahl, Einführung und Betrieb im Arbeitsalltag."
   },
+  "betriebswirtschaft": {
+    "label": "Betriebswirtschaft",
+    "icon": "∑",
+    "color": "#5a4fa8",
+    "claim": "Wovon der Betrieb lebt, in Zahlen",
+    "desc": "Kalkulation, Wareneinsatz, Deckungsbeitrag, Kennzahlen und Budget — die Rechenseite des Gastgewerbes.",
+    "disclaimer": "Steuersätze, Beitragssätze und Richtwerte ändern sich. Die Rechenwege bleiben, die Zahlen sind vor jeder Anwendung gegen den aktuellen Stand zu prüfen."
+  },
   "fuehrung": {
     "label": "Führung & HR",
     "icon": "◈",

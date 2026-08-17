@@ -74,11 +74,20 @@ pruefe("Referenzknoten behalten ihre deklarierte Stufe",
 pruefe("Neubewertung findet statt", changes.length > 0,
   "keine einzige Abweichung — die Normalisierung greift nicht");
 
-for (const topic of new Set(nodes.map((n) => n.topic))) {
+/*
+ * Sobald die Normalisierung greift, muss sie ALLE fünf Stufen besetzen — das
+ * ist ihr Zweck. Die frühere Schwelle von drei Stufen ließ genau den Fehler
+ * durch, den sie hätte finden sollen: Bei elf Lernknoten blieb Stufe 5 leer,
+ * weil die einzeln gerundeten Quotenanteile die Menge schon aufgebraucht
+ * hatten. Der Test war grün, und das Archiv meldete gleichzeitig eine
+ * unbesetzte Expertenstufe im Backlog.
+ */
+for (const topic of [...new Set(nodes.map((n) => n.topic))].sort()) {
   const lern = nodes.filter((n) => n.topic === topic && n.type !== "referenz");
   if (lern.length < CONFIG.rebalanceMinNodes) continue;
   const stufen = new Set(lern.map((n) => n.level));
-  pruefe(`${topic}: Stufen gestreut (${[...stufen].sort().join(",")})`, stufen.size >= 3);
+  pruefe(`${topic}: alle fünf Stufen besetzt (${[...stufen].sort().join(",")})`,
+    stufen.size === 5, `${lern.length} Lernknoten, aber nur ${stufen.size} Stufen`);
 }
 
 /* ----------------------------------------------------- Neugruppierung */

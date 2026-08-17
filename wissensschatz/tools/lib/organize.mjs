@@ -120,10 +120,24 @@ export function rebalanceLevels(nodes) {
     const sorted = [...learn].sort((a, b) => a._raw - b._raw);
     // Zielverteilung: breite Basis, schmale Spitze (Lernpyramide)
     const quota = [0.24, 0.26, 0.24, 0.16, 0.10];
-    let idx = 0;
+
+    /*
+     * Grenzen werden aus dem KUMULIERTEN Anteil bestimmt, nicht aus einzeln
+     * gerundeten Stufenanteilen. Bei elf Lernknoten ergaben die vier einzeln
+     * gerundeten Anteile in Summe genau elf — für Stufe 5 blieb keiner übrig,
+     * und das Archiv meldete eine unbesetzte Expertenstufe, die sich durch
+     * keinen zusätzlichen Knoten schließen ließ. Die Deckelung auf `n - rest`
+     * hält für jede noch folgende Stufe mindestens einen Knoten frei.
+     */
+    const n = sorted.length;
+    let kum = 0, idx = 0;
     quota.forEach((share, i) => {
-      const take = i === 4 ? sorted.length - idx : Math.max(1, Math.round(share * sorted.length));
-      for (let k = 0; k < take && idx < sorted.length; k++, idx++) sorted[idx].level = i + 1;
+      kum += share;
+      const rest = quota.length - i - 1;
+      const grenze = i === quota.length - 1
+        ? n
+        : Math.min(Math.max(Math.round(kum * n), idx + 1), n - rest);
+      while (idx < grenze) sorted[idx++].level = i + 1;
     });
     for (const n of group) {
       if (n.type === "referenz") n.level = n.declaredLevel;

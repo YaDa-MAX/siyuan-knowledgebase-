@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [roi, priorisierung, bewertung, wirtschaftlichkeit]
 prereqs: [prozessauto-analyse]
-related: [prozessauto-werkzeugwahl, excel-was-waere-wenn]
+related: [prozessauto-werkzeugwahl, excel-was-waere-wenn, bwl-investition]
 summary: Neun Merkmale, die einen Prozess automatisierbar machen — und eine ehrliche Wirtschaftlichkeitsrechnung inklusive Betriebsaufwand.
 ---
 

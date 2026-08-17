@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [simulation, optimierung, szenarien, solver]
 prereqs: [excel-formelsprache]
-related: [excel-finanzmathematik, excel-modellbau]
+related: [excel-finanzmathematik, excel-modellbau, bwl-deckungsbeitrag]
 summary: Vier Werkzeuge, um ein Modell rückwärts zu rechnen — von der einfachen Zielwertsuche bis zur restringierten Optimierung.
 ---
 

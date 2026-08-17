@@ -523,6 +523,162 @@
       "Schärfentiefebereiche für drei Kombinationen aus Blende und Aufnahmeabstand");
   }
 
+  /* ================================================== 9 · Break-even */
+
+  function breakEven() {
+    const B = 780, H = 400, links = 74, unten = 62, oben = 24, rechts = 130;
+    const bw = B - links - rechts, hh = H - unten - oben;
+
+    // Beispiel aus dem Knoten: 38.000 € Fixkosten, DB-Quote 68 %
+    const fix = 38000, dbQuote = 0.68;
+    const maxU = 90000;
+    const be = fix / dbQuote;                        // 55.882 €
+
+    const x = (u) => links + (u / maxU) * bw;
+    const y = (w) => oben + hh - (w / maxU) * hh;
+
+    let s = PFEIL;
+
+    // Verlust- und Gewinnzone
+    s += rechteck(links, oben, x(be) - links, hh, { fill: "var(--vz-rot)", op: 0.05, r: 0 });
+    s += rechteck(x(be), oben, links + bw - x(be), hh, { fill: "var(--vz-gruen)", op: 0.06, r: 0 });
+
+    // Achsen und Gitter
+    s += linie(links, oben, links, oben + hh, { op: 0.45 });
+    s += linie(links, oben + hh, links + bw, oben + hh, { op: 0.45 });
+    for (let u = 0; u <= maxU; u += 15000) {
+      s += linie(x(u), oben + hh, x(u), oben + hh + 5, { op: 0.4 });
+      s += txt(x(u), oben + hh + 19, (u / 1000) + "k", { anchor: "middle", size: 10, op: 0.6 });
+      if (u) s += linie(links, y(u), links + bw, y(u), { op: 0.08, dash: "3 4" });
+      if (u) s += txt(links - 8, y(u) + 4, (u / 1000) + "k €", { anchor: "end", size: 10, op: 0.6 });
+    }
+    s += txt(links + bw / 2, oben + hh + 42, "Monatsumsatz netto", { anchor: "middle", size: 11, op: 0.7 });
+    s += txt(16, oben + hh / 2, "Euro im Monat", { anchor: "middle", size: 11, op: 0.7, rot: -90 });
+
+    // Fixkosten, Gesamtkosten, Umsatz
+    s += linie(links, y(fix), links + bw, y(fix), { stroke: "var(--vz-grau)", sw: 2, op: 0.9 });
+    const gesamt = (u) => fix + u * (1 - dbQuote);
+    s += `<path d="M${links},${y(gesamt(0))} L${links + bw},${y(gesamt(maxU))}" fill="none"
+       stroke="var(--vz-orange)" stroke-width="2.4"></path>`;
+    s += `<path d="M${links},${y(0)} L${links + bw},${y(maxU)}" fill="none"
+       stroke="var(--vz-blau)" stroke-width="2.4"></path>`;
+
+    // Break-even-Punkt
+    s += linie(x(be), y(be), x(be), oben + hh, { stroke: "var(--vz-gruen)", sw: 1.5, op: 0.85, dash: "5 4" });
+    s += `<circle cx="${x(be)}" cy="${y(be)}" r="5.5" fill="var(--vz-gruen)"></circle>`;
+    s += txt(x(be), oben + hh + 36, "55.882 €", { anchor: "middle", size: 11, weight: 700, fill: "var(--vz-gruen)" });
+
+    // Beschriftung der Linien am rechten Rand
+    const rx = links + bw + 8;
+    s += txt(rx, y(maxU) + 4, "Umsatz", { size: 11.5, weight: 700, fill: "var(--vz-blau)" });
+    s += txt(rx, y(gesamt(maxU)) - 2, "Gesamtkosten", { size: 11.5, weight: 700, fill: "var(--vz-orange)" });
+    s += txt(rx, y(gesamt(maxU)) + 13, "fix + variabel", { size: 9.5, fill: "var(--vz-orange)", op: 0.8 });
+    s += txt(rx, y(fix) + 4, "Fixkosten", { size: 11.5, weight: 700, fill: "var(--vz-grau)" });
+    s += txt(rx, y(fix) + 18, "38.000 €", { size: 9.5, fill: "var(--vz-grau)", op: 0.8 });
+
+    // Zonen benennen
+    s += txt(x(be) / 2 + links / 2, oben + 20, "Verlust", { anchor: "middle", size: 12, weight: 700, fill: "var(--vz-rot)", op: 0.75 });
+    s += txt((x(be) + links + bw) / 2, oben + 20, "Gewinn", { anchor: "middle", size: 12, weight: 700, fill: "var(--vz-gruen)", op: 0.8 });
+
+    // Der Abstand zwischen den Linien ist der Deckungsbeitrag
+    const up = 78000;
+    s += linie(x(up), y(up), x(up), y(gesamt(up)), { stroke: "var(--vz-gruen)", sw: 1.5, op: 0.9, marker: "pfeil" });
+    s += txt(x(up) - 8, (y(up) + y(gesamt(up))) / 2 + 4, "Ergebnis", { anchor: "end", size: 10.5, weight: 600, fill: "var(--vz-gruen)" });
+
+    return figur(`0 0 ${B} ${H}`, s,
+      "Die Fixkosten laufen waagerecht — sie kennen den Umsatz nicht. Der Abstand zwischen Umsatz- und Kostenlinie ist das Ergebnis, und er wächst mit jedem Euro schneller als der Umsatz selbst. <strong>Der Break-even ist erst der Anfang der Rechnung, nicht ihr Ziel.</strong>",
+      "Break-even-Diagramm mit Fixkosten, Gesamtkosten, Umsatzlinie und Gewinnschwelle");
+  }
+
+  /* =============================================== 10 · Menu Engineering */
+
+  function menuEngineering() {
+    const B = 720, H = 480, links = 76, oben = 30, unten = 62, rechts = 26;
+    const bw = B - links - rechts, hh = H - oben - unten;
+
+    // Beispielkarte: Anteil an den Verkäufen und Deckungsbeitrag je Portion
+    const gerichte = [
+      { t: "Rinderfilet", anteil: 9, db: 18.4 },
+      { t: "Zanderfilet", anteil: 5, db: 15.2 },
+      { t: "Wiener Schnitzel", anteil: 21, db: 10.2 },
+      { t: "Rumpsteak", anteil: 12, db: 16.9 },
+      { t: "Burger", anteil: 17, db: 9.4 },
+      { t: "Pasta des Tages", anteil: 14, db: 8.1 },
+      { t: "Flammkuchen", anteil: 11, db: 7.6 },
+      { t: "Wildragout", anteil: 4, db: 14.1 },
+      { t: "Kürbisrisotto", anteil: 5, db: 6.9 },
+      { t: "Salatteller", anteil: 2, db: 5.8 },
+    ];
+
+    // Gewichteter Durchschnitt — der Punkt, an dem die Auswertung meist falsch läuft
+    const summe = gerichte.reduce((a, g) => a + g.anteil, 0);
+    const dbSchnitt = gerichte.reduce((a, g) => a + g.db * g.anteil, 0) / summe;
+    const schwelle = (100 / gerichte.length) * 0.7;   // 70 % des Gleichverteilungsanteils
+
+    const maxA = 24, maxDb = 20;
+    const x = (a) => links + (a / maxA) * bw;
+    const y = (d) => oben + hh - (d / maxDb) * hh;
+
+    let s = PFEIL;
+
+    /*
+     * Die Feldtitel sitzen jeweils in der ÄUSSEREN Ecke ihres Quadranten,
+     * nicht in der inneren: Innen laufen die beiden Trennlinien zusammen, und
+     * dort drängen sich auch die Punkte. In der ersten Fassung überschrieb
+     * „Rinderfilet" den Titel „Stars".
+     */
+    const felder = [
+      { xa: 0, xb: schwelle, ya: dbSchnitt, yb: maxDb, ecke: "ol", t: "Puzzles", u: "beschreiben, platzieren, empfehlen", f: "var(--vz-blau)" },
+      { xa: schwelle, xb: maxA, ya: dbSchnitt, yb: maxDb, ecke: "or", t: "Stars", u: "nicht anfassen", f: "var(--vz-gruen)" },
+      { xa: 0, xb: schwelle, ya: 0, yb: dbSchnitt, ecke: "ul", t: "Dogs", u: "streichen — oder Grund benennen", f: "var(--vz-grau)" },
+      { xa: schwelle, xb: maxA, ya: 0, yb: dbSchnitt, ecke: "ur", t: "Renner", u: "Wareneinsatz senken", f: "var(--vz-orange)" },
+    ];
+    felder.forEach((f) => {
+      s += rechteck(x(f.xa), y(f.yb), x(f.xb) - x(f.xa), y(f.ya) - y(f.yb),
+        { fill: f.f, op: 0.07, r: 0 });
+      const rechtsBuendig = f.ecke[1] === "r";
+      const tx = rechtsBuendig ? x(f.xb) - 10 : x(f.xa) + 10;
+      const ty = f.ecke[0] === "o" ? y(f.yb) + 19 : y(f.ya) - 22;
+      s += txt(tx, ty, f.t, { size: 13, weight: 700, fill: f.f, op: 0.9, anchor: rechtsBuendig ? "end" : "start" });
+      s += txt(tx, ty + 15, f.u, { size: 9.5, fill: f.f, op: 0.75, anchor: rechtsBuendig ? "end" : "start" });
+    });
+
+    // Trennlinien
+    s += linie(x(schwelle), oben, x(schwelle), oben + hh, { sw: 1.5, op: 0.45, dash: "5 4" });
+    s += linie(links, y(dbSchnitt), links + bw, y(dbSchnitt), { sw: 1.5, op: 0.45, dash: "5 4" });
+
+    // Achsen
+    s += linie(links, oben, links, oben + hh, { op: 0.45 });
+    s += linie(links, oben + hh, links + bw, oben + hh, { op: 0.45 });
+    for (let a = 0; a <= maxA; a += 4) {
+      s += linie(x(a), oben + hh, x(a), oben + hh + 5, { op: 0.4 });
+      s += txt(x(a), oben + hh + 19, a + " %", { anchor: "middle", size: 10, op: 0.6 });
+    }
+    for (let d = 0; d <= maxDb; d += 5) {
+      s += txt(links - 8, y(d) + 4, d + " €", { anchor: "end", size: 10, op: 0.6 });
+    }
+    s += txt(links + bw / 2, oben + hh + 42, "Anteil an den Verkäufen", { anchor: "middle", size: 11, op: 0.7 });
+    s += txt(16, oben + hh / 2, "Deckungsbeitrag je Portion", { anchor: "middle", size: 11, op: 0.7, rot: -90 });
+
+    // Schwellenbeschriftung
+    s += txt(x(schwelle) + 5, oben + hh + 33, `Schwelle ${schwelle.toFixed(0)} %`, { size: 9.5, op: 0.55 });
+    s += txt(links + 4, y(dbSchnitt) - 5, `Ø ${dbSchnitt.toFixed(2).replace(".", ",")} € (gewichtet)`, { size: 9.5, op: 0.55 });
+
+    // Gerichte
+    gerichte.forEach((g) => {
+      const px = x(g.anteil), py = y(g.db);
+      const feld = felder.find((f) => g.anteil >= f.xa && g.anteil < f.xb && g.db >= f.ya && g.db < f.yb) || felder[2];
+      s += `<circle cx="${px}" cy="${py}" r="5" fill="${feld.f}" opacity=".9"><title>${esc(g.t)} — ${g.anteil} % der Verkäufe, ${g.db.toFixed(2).replace(".", ",")} € DB</title></circle>`;
+      const rechtsRaus = px + g.t.length * 5.6 + 12 > links + bw;
+      s += txt(rechtsRaus ? px - 8 : px + 8, py + 4, g.t,
+        { size: 10, op: 0.9, anchor: rechtsRaus ? "end" : "start" });
+    });
+
+    return figur(`0 0 ${B} ${H}`, s,
+      "Eine Beispielkarte in den vier Feldern. Das Schnitzel ist ein <strong>Renner</strong> — es bringt die Gäste, trägt aber unterdurchschnittlich; hier lohnt der Blick auf den Wareneinsatz. Filet und Wildragout sind <strong>Puzzles</strong>: Die Kalkulation stimmt schon, es fehlt nur die Aufmerksamkeit. Der Durchschnitt ist <strong>gewichtet</strong> — sonst zählt ein viermal verkauftes Gericht so viel wie eines mit 200 Verkäufen.",
+      "Menu-Engineering-Matrix aus Verkaufsanteil und Deckungsbeitrag mit den vier Feldern Stars, Renner, Puzzles und Dogs");
+  }
+
   /* ------------------------------------------------------- Registrieren */
 
   Object.assign(VIZ.benannt, {
@@ -534,5 +690,7 @@
     "glasl-eskalation": glaslEskalation,
     "werkzeugleiter": werkzeugleiter,
     "schaerfentiefe": schaerfentiefe,
+    "break-even": breakEven,
+    "menu-engineering": menuEngineering,
   });
 })();

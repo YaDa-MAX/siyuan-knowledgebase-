@@ -1,0 +1,42 @@
+{
+  "title": "Betriebswirtschaftliche Kennzahlen im Gastgewerbe",
+  "topic": "betriebswirtschaft",
+  "note": "Richtwerte sind Orientierung, keine Zielvorgabe — sie schwanken stark nach Betriebsart, Standort, Konzept und Saison. Ein Sternerestaurant und ein Systemgastronom haben denselben Namen für die Kennzahl und nichts sonst gemeinsam. Aussagekräftig wird eine Kennzahl erst im Zeitvergleich mit dem eigenen Betrieb.",
+  "columns": [
+    { "key": "kz", "label": "Kennzahl" },
+    { "key": "kat", "label": "Bereich" },
+    { "key": "formel", "label": "Formel" },
+    { "key": "richt", "label": "Orientierung" },
+    { "key": "falle", "label": "Die häufigste Falle" },
+    { "key": "lvl", "label": "Stufe", "type": "level" }
+  ],
+  "items": [
+    { "kz": "Wareneinsatzquote Küche", "kat": "Wareneinsatz", "formel": "Wareneinsatz Küche / Küchenumsatz netto", "richt": "25–35 %", "falle": "Bestandsveränderung vergessen — dann misst man Einkauf statt Verbrauch.", "lvl": 2 },
+    { "kz": "Wareneinsatzquote Getränke", "kat": "Wareneinsatz", "formel": "Wareneinsatz Getränke / Getränkeumsatz netto", "richt": "18–25 %", "falle": "Mit der Küche zusammengerechnet — dann verdeckt die eine Quote die andere.", "lvl": 2 },
+    { "kz": "Rohertrag", "kat": "Wareneinsatz", "formel": "Umsatz netto − Wareneinsatz", "richt": "—", "falle": "Mit dem Gewinn verwechselt; Personal und Fixkosten sind noch nicht abgezogen.", "lvl": 1 },
+    { "kz": "Schwundquote", "kat": "Wareneinsatz", "formel": "(Sollverbrauch − Istverbrauch) / Sollverbrauch", "richt": "unter 3 %", "falle": "Personalverpflegung und Bruch nicht getrennt erfasst — dann sieht Organisation aus wie Diebstahl.", "lvl": 3 },
+    { "kz": "Personalkostenquote", "kat": "Personal", "formel": "Personalkosten inkl. Nebenkosten / Umsatz netto", "richt": "30–40 %", "falle": "Nur Bruttolöhne gerechnet; Arbeitgeberanteile und Umlagen fehlen.", "lvl": 2 },
+    { "kz": "Vollzeitäquivalent (VZÄ)", "kat": "Personal", "formel": "Summe Wochenstunden / tarifliche Vollzeitstunden", "richt": "—", "falle": "Kopfzahlen statt VZÄ verglichen — bei vielen Teilzeitkräften wertlos.", "lvl": 2 },
+    { "kz": "Umsatz je VZÄ", "kat": "Personal", "formel": "Umsatz netto / VZÄ", "richt": "—", "falle": "Ohne Zeitraumangabe verglichen (Monat gegen Jahr).", "lvl": 3 },
+    { "kz": "Produktivstundensatz", "kat": "Personal", "formel": "Personalkosten / geleistete produktive Stunden", "richt": "—", "falle": "Urlaub, Krankheit und Rüstzeiten als produktiv gezählt.", "lvl": 3 },
+    { "kz": "Personalkosten je belegtem Zimmer", "kat": "Personal", "formel": "Personalkosten / verkaufte Zimmer", "richt": "—", "falle": "Ohne Auslastungsbezug betrachtet — sinkt automatisch bei voller Auslastung.", "lvl": 3 },
+    { "kz": "Belegung", "kat": "Hotel", "formel": "verkaufte Zimmer / verfügbare Zimmer", "richt": "65–80 %", "falle": "Verfügbare Zimmer nicht um Renovierung bereinigt (Out of Order).", "lvl": 1 },
+    { "kz": "ADR", "kat": "Hotel", "formel": "Logisumsatz netto / verkaufte Zimmer", "richt": "—", "falle": "Frühstück und Kurtaxe im Logisumsatz belassen — dann ist die ADR zu hoch.", "lvl": 2 },
+    { "kz": "RevPAR", "kat": "Hotel", "formel": "Logisumsatz / verfügbare Zimmer = Belegung × ADR", "richt": "—", "falle": "Als Ertragsgröße gelesen — RevPAR kennt keine Kosten.", "lvl": 2 },
+    { "kz": "TRevPAR", "kat": "Hotel", "formel": "Gesamtumsatz / verfügbare Zimmer", "richt": "—", "falle": "Nur sinnvoll, wenn F&B und Nebenerlöse konsistent zugeordnet sind.", "lvl": 3 },
+    { "kz": "GOPPAR", "kat": "Hotel", "formel": "Bruttobetriebsergebnis / verfügbare Zimmer", "richt": "—", "falle": "Abgrenzung des GOP nicht nach USALI — dann nicht vergleichbar.", "lvl": 4 },
+    { "kz": "Netto-ADR nach Vertriebskosten", "kat": "Hotel", "formel": "(Logisumsatz − Provisionen − Vertriebskosten) / verkaufte Zimmer", "richt": "—", "falle": "OTA-Provision als Marketingkosten gebucht statt vom Erlös abgezogen.", "lvl": 4 },
+    { "kz": "Durchschnittsbon", "kat": "Gastronomie", "formel": "Umsatz netto / Anzahl Rechnungen", "richt": "—", "falle": "Mit dem Umsatz je Gast verwechselt — Tischrechnungen verfälschen das.", "lvl": 1 },
+    { "kz": "Sitzplatzumschlag", "kat": "Gastronomie", "formel": "bewirtete Gäste / verfügbare Sitzplätze", "richt": "1,5–3 je Service", "falle": "Über den ganzen Tag gerechnet statt je Servicezeit.", "lvl": 3 },
+    { "kz": "Deckungsbeitrag je Gericht", "kat": "Kalkulation", "formel": "Verkaufspreis netto − variable Kosten", "richt": "—", "falle": "Als Prozentsatz optimiert statt als Euro-Betrag je Gericht.", "lvl": 3 },
+    { "kz": "Aufschlagfaktor", "kat": "Kalkulation", "formel": "1 / Zielwareneinsatzquote", "richt": "3–4", "falle": "Faktor auf den Bruttopreis angewandt statt auf den Nettowareneinsatz.", "lvl": 2 },
+    { "kz": "Break-even-Umsatz", "kat": "Kalkulation", "formel": "Fixkosten / Deckungsbeitragsquote", "richt": "—", "falle": "Unternehmerlohn und kalkulatorische Miete nicht in den Fixkosten.", "lvl": 3 },
+    { "kz": "Sicherheitsstrecke", "kat": "Kalkulation", "formel": "(Istumsatz − Break-even-Umsatz) / Istumsatz", "richt": "über 20 %", "falle": "Auf Jahresbasis gerechnet — die Saison verdeckt kritische Monate.", "lvl": 4 },
+    { "kz": "Fixkostenanteil", "kat": "Kalkulation", "formel": "Fixkosten / Gesamtkosten", "richt": "—", "falle": "Personal pauschal als variabel eingeordnet, obwohl der Kern fest ist.", "lvl": 3 },
+    { "kz": "Amortisationsdauer", "kat": "Investition", "formel": "Investitionssumme / jährlicher Rückfluss", "richt": "—", "falle": "Ignoriert alles nach dem Amortisationszeitpunkt und den Zinseffekt.", "lvl": 4 },
+    { "kz": "Kapitalwert", "kat": "Investition", "formel": "Summe abgezinster Rückflüsse − Investition", "richt": "größer 0", "falle": "Kalkulationszins zu niedrig angesetzt; er ist der Anspruch, nicht der Kreditzins.", "lvl": 5 },
+    { "kz": "Eigenkapitalquote", "kat": "Bilanz", "formel": "Eigenkapital / Bilanzsumme", "richt": "über 20 %", "falle": "Gesellschafterdarlehen als Eigenkapital gezählt.", "lvl": 4 },
+    { "kz": "Liquidität 2. Grades", "kat": "Bilanz", "formel": "(liquide Mittel + Forderungen) / kurzfristige Verbindlichkeiten", "richt": "um 100 %", "falle": "Stichtagsgröße als Dauerzustand gelesen — im Saisonbetrieb wertlos.", "lvl": 4 },
+    { "kz": "Cash Conversion Cycle", "kat": "Bilanz", "formel": "Lagerdauer + Forderungslaufzeit − Lieferantenziel", "richt": "möglichst negativ", "falle": "Im Gastgewerbe oft negativ und deshalb ignoriert — genau das ist der Vorteil.", "lvl": 5 }
+  ]
+}

@@ -223,14 +223,19 @@
   function abdeckung() {
     const themen = KB.stats.byTopicLevel;
     const max = Math.max(1, ...themen.flatMap((t) => t.levels));
-    const zellB = 62, zellH = 34, linksB = 150, obenH = 30;
+    // Zwei Kopfzeilen und breitere Spalten: „3 · Fortgeschritten" ist einzeilig
+    // deutlich breiter als eine Zelle und lief in die Nachbarspalte hinein.
+    const zellB = 88, zellH = 34, linksB = 150, obenH = 46;
     const b = linksB + zellB * 5 + 12;
     const h = obenH + zellH * themen.length + 8;
 
     let s = `<svg viewBox="0 0 ${b} ${h}" role="img" aria-label="Abdeckung je Thema und Stufe" style="font-family:inherit">`;
     for (let l = 1; l <= 5; l++) {
-      s += `<text x="${linksB + zellB * (l - 0.5)}" y="19" text-anchor="middle" font-size="11"
-             fill="currentColor" opacity=".6">${l} · ${esc(KB.levelNames[l])}</text>`;
+      const x = linksB + zellB * (l - 0.5);
+      s += `<text x="${x}" y="17" text-anchor="middle" font-size="12" font-weight="700"
+             fill="currentColor" opacity=".65">${l}</text>`;
+      s += `<text x="${x}" y="32" text-anchor="middle" font-size="9.5"
+             fill="currentColor" opacity=".5">${esc(KB.levelNames[l])}</text>`;
     }
     themen.forEach((t, ti) => {
       const meta = KB.topicMeta[t.topic] || {};

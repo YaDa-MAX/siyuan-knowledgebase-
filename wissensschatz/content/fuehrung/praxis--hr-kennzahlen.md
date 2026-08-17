@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [kennzahlen, controlling, fluktuation, hotellerie]
 prereqs: []
-related: [powerbi-betrieb, excel-pivot, fuehrung-entwicklung, arbeitsrecht-arbeitszeit]
+related: [powerbi-betrieb, excel-pivot, fuehrung-entwicklung, arbeitsrecht-arbeitszeit, bwl-hotelkennzahlen]
 summary: Die Kennzahlen der HR-Lehre mit Formeln, sinnvollen Bezugsgrößen und den branchenspezifischen Größen der Hotellerie.
 ---
 

@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [finanzmathematik, annuitaet, rendite, abschreibung, investition]
 prereqs: [excel-formelsprache, excel-datum-zeit]
-related: [excel-was-waere-wenn, excel-modellbau, excel-funktionsreferenz]
+related: [excel-was-waere-wenn, excel-modellbau, excel-funktionsreferenz, bwl-investition]
 summary: Barwert, Annuität und Rendite mit den richtigen Vorzeichen — plus die Frage, wann XINTZINSFUSS statt IKV gebraucht wird und warum die CAGR nicht der Mittelwert ist.
 ---
 
