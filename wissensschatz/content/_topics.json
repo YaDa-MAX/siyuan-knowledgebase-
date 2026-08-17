@@ -42,6 +42,14 @@
     "desc": "Kalkulation, Wareneinsatz, Deckungsbeitrag, Kennzahlen und Budget — die Rechenseite des Gastgewerbes.",
     "disclaimer": "Steuersätze, Beitragssätze und Richtwerte ändern sich. Die Rechenwege bleiben, die Zahlen sind vor jeder Anwendung gegen den aktuellen Stand zu prüfen."
   },
+  "lernen": {
+    "label": "Lernen",
+    "icon": "↻",
+    "color": "#a8407a",
+    "claim": "Was wirkt, fühlt sich falsch an",
+    "desc": "Gedächtnis, Abrufen, Verteilen, Verschachteln — die Befundlage der Lernforschung, übersetzt in Handlungen. Einschließlich dessen, was sich als unwirksam erwiesen hat.",
+    "disclaimer": "Zusammengefasste Forschungslage, keine Garantie. Effektstärken schwanken mit Fach, Vorwissen und Alter; wo Befunde umstritten oder Replikationen gescheitert sind, steht es dabei."
+  },
   "fuehrung": {
     "label": "Führung & HR",
     "icon": "◈",

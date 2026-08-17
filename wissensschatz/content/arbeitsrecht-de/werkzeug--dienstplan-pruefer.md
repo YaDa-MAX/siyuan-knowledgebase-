@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [dienstplan, arbeitszeit, pruefung, hotellerie, werkzeug, jugendarbeitsschutz]
 prereqs: [arbeitsrecht-arbeitszeit, arbeitsrecht-jugendarbeitsschutz]
-related: [arbeitsrecht-hotellerie, fuehrung-kennzahlen, prozessauto-einstieg, meta-lerntheorie, bwl-personalkosten]
+related: [arbeitsrecht-hotellerie, fuehrung-kennzahlen, prozessauto-einstieg, meta-lerntheorie, bwl-personalkosten, lernen-praxis]
 summary: Welche Regeln der eingebaute Prüfer rechnet, welche er bewusst nicht kennt — und die vier Konstruktionsfehler, an denen Dienstpläne im Gastgewerbe regelmäßig scheitern.
 ---
 

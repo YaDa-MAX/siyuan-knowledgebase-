@@ -41,16 +41,26 @@ Node.js ≥ 18, keine Abhängigkeiten.
 | **Betriebswirtschaft** | Umsatz-Kosten-Ergebnis-Kette und Umsatzsteuer im Gastgewerbe, Wareneinsatz mit Bestandsveränderung, Schwund und seine wahren Ursachen, Personalkosten und Vollzeitäquivalente, Preiskalkulation und Rückwärtsrechnung, Deckungsbeitrag und Break-even, Menu Engineering, Hotelkennzahlen bis GOPPAR und USALI, Budget und Abweichungszerlegung, Revenue Management, Liquidität im Saisonbetrieb, Investitionsrechnung — plus 27 Kennzahlen mit ihren typischen Fehlerquellen |
 | **Führung & HR** | Die ersten 100 Tage, Führungs- und Motivationstheorien, Führungsstile und Delegation, Gesprächsführung, Entwicklungsbegleitung, Team- und Konfliktdynamik, Vergütung und Anreize, Recruiting und Bindung, Selbstführung, HR-Kennzahlen inkl. Hotelkennzahlen |
 | **Arbeitsrecht DE** | Rechtsquellen, Vertrag und Befristung, Arbeitszeit mit den Gaststätten-Ausnahmen, Jugendarbeitsschutz, Vergütung und Mindestlohn, Urlaub und Krankheit, Mutterschutz und Schwerbehinderung, Betriebsrat und Arbeitsschutz, Ausbildung, Beendigung — mit durchgehendem Fokus Hotellerie |
+| **Lernen** | Gedächtnis und Konsolidierung, Vergessenskurve und der Unterschied zwischen Speicher- und Abrufstärke, Abrufeffekt, verteiltes und verschachteltes Üben, Elaboration und Dual Coding, wünschenswerte Erschwernisse, Metakognition, Motivation und Volition, Lernplanung, Textarbeit und Notizen, Mnemotechniken, Transfer im Beruf, Anleiten mit Cognitive Load Theory — **und ein eigener Teil zur Befundlage**: Lerntypen und die verbreiteten Lernmythen, jeweils mit Herkunft, Studienlage und dem, was übrig bleibt |
 | **Meta** | Aufbau, Fütterungswege, Pflegeroutine, Sicherung, Tresor und Übergabe, Lerntheorie hinter dem Lernmodus, Wissensarchitektur, Anleitung für neue Themengebiete |
 
 Dazu einsatzfertige Vorlagen unter `vorlagen/`: VBA-Module, SQL-Referenzen,
 Office Scripts, Power-Query-Abfragen und Tabellenvorlagen.
 
-**Elf Fachgrafiken** (`web/diagramme.js`) zeigen jeweils einen Mechanismus, den
+**Dreizehn Fachgrafiken** (`web/diagramme.js`) zeigen jeweils einen Mechanismus, den
 Fließtext nur umständlich erklärt — etwa alle Bajonette auf einer Auflagemaß-Achse
 mit der Richtung der Adaptierbarkeit, denselben Spätdienst unter drei
-Arbeitszeitregimen mit dem jeweils frühesten nächsten Dienstbeginn, oder eine
-Speisekarte in den vier Feldern des Menu Engineerings.
+Arbeitszeitregimen mit dem jeweils frühesten nächsten Dienstbeginn, eine
+Speisekarte in den vier Feldern des Menu Engineerings, oder die Vergessenskurve
+mit und ohne Wiederholung.
+
+> **Zum Themengebiet Lernen:** Es enthält ausdrücklich auch, was sich als
+> **unwirksam** erwiesen hat — die Lerntypen-Modelle nach Vester, VAK/VARK und Kolb,
+> die Lernpyramide mit ihren erfundenen Prozentzahlen, die Gehirnhälften-Typologie.
+> Jeweils mit Herkunft, der Prüfung, an der sie scheitern, und dem, was von der
+> Grundidee übrig bleibt. Weglassen wäre bei „aus Studien und Büchern" unehrlich,
+> und der Schaden dieser Modelle liegt weniger im Irrtum als darin, dass sie die
+> drei kostenlosen und wirksamen Verfahren verdrängen.
 
 ---
 

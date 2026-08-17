@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [motivation, maslow, herzberg, selbstbestimmung, anreize]
 prereqs: []
-related: [fuehrung-theorien, fuehrung-entwicklung, fuehrung-gespraeche]
+related: [fuehrung-theorien, fuehrung-entwicklung, fuehrung-gespraeche, lernen-motivation]
 summary: Inhalts- und Prozesstheorien aus der Lehre, was empirisch trägt, und warum Geld ein schwaches Motivationsinstrument ist.
 ---
 

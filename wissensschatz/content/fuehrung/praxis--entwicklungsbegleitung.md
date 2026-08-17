@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [personalentwicklung, onboarding, kompetenzmodell, talent, nachfolge]
 prereqs: [fuehrung-motivation]
-related: [fuehrung-gespraeche, fuehrung-team, arbeitsrecht-ausbildung]
+related: [fuehrung-gespraeche, fuehrung-team, arbeitsrecht-ausbildung, lernen-anleiten, lernen-praxis]
 summary: Von der Einarbeitung bis zur Nachfolgeplanung — Kompetenzmodelle, 70-20-10, Beurteilungsfehler und was in der Hotellerie besonders zählt.
 ---
 

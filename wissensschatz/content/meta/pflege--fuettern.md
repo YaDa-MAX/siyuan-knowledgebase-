@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-10
 tags: [einspeisen, workflow, ki, nutzerinhalte]
 prereqs: [meta-start]
-related: [meta-pflegeroutine, meta-start]
+related: [meta-pflegeroutine, meta-start, lernen-abrufen]
 summary: Der Alltagsweg für neues Wissen — aus dem Kopf, aus Gesprächen, aus KI-Antworten. Und wie beides voneinander unterscheidbar bleibt.
 ---
 

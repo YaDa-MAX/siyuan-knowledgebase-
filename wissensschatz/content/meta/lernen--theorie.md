@@ -9,9 +9,11 @@ status: geprueft
 updated: 2026-08-11
 tags: [lernen, wiederholung, abrufen, gedaechtnis, srs]
 prereqs: [meta-start]
-related: [meta-fuettern, fuehrung-entwicklung, meta-wissensarchitektur, arbeitsrecht-dienstplan-pruefer]
+related: [meta-fuettern, fuehrung-entwicklung, meta-wissensarchitektur, arbeitsrecht-dienstplan-pruefer, lernen-einstieg, lernen-abrufen, lernen-verteilen]
 summary: Abrufen schlägt Wiederlesen, verteiltes Üben schlägt Blocken — und warum sich Lernen richtig anfühlt, wenn es gerade nicht wirkt.
 ---
+
+> **Dieser Knoten erklärt die Bauweise des Lernmodus.** Die zugrunde liegende Forschung — Gedächtnis, Vergessen, Abrufeffekt, Verteilung, Verschachtelung, Metakognition, Lerntypen und die übrigen Lernmythen — steht ausführlich im eigenen Themengebiet **Lernen**. Einstieg dort über *[Lernen — was tatsächlich wirkt](#wissen/lernen-einstieg)*.
 
 ## Warum der Lernmodus so gebaut ist
 

@@ -679,9 +679,171 @@
       "Menu-Engineering-Matrix aus Verkaufsanteil und Deckungsbeitrag mit den vier Feldern Stars, Renner, Puzzles und Dogs");
   }
 
+  /* ================================================ 11 · Vergessenskurve */
+
+  function vergessenskurve() {
+    const B = 800, H = 400, links = 66, unten = 58, oben = 26, rechts = 132;
+    const bw = B - links - rechts, hh = H - unten - oben;
+    const maxT = 40;
+
+    const x = (t) => links + (t / maxT) * bw;
+    const y = (r) => oben + hh - r * hh;
+
+    // Stabilität wächst mit jeder erfolgreichen Wiederholung: Die Kurve nach
+    // dem vierten Abruf fällt kaum noch. Genau das ist der Grund für die
+    // wachsenden Abstände im Wiederholungsplan.
+    const wdh = [
+      { ab: 0, bis: 1, s: 1.25 },
+      { ab: 1, bis: 7, s: 11.7 },
+      { ab: 7, bis: 23, s: 44.9 },
+      { ab: 23, bis: maxT, s: 150 },
+    ];
+    const kurve = (ab, bis, s) => {
+      let d = "";
+      for (let i = 0; i <= 60; i++) {
+        const t = ab + ((bis - ab) * i) / 60;
+        d += (d ? "L" : "M") + x(t) + "," + y(Math.exp(-(t - ab) / s));
+      }
+      return d;
+    };
+
+    let s = PFEIL;
+
+    // Achsen und Gitter
+    s += linie(links, oben, links, oben + hh, { op: 0.45 });
+    s += linie(links, oben + hh, links + bw, oben + hh, { op: 0.45 });
+    [0, 1, 7, 14, 23, 30, 40].forEach((t) => {
+      s += linie(x(t), oben + hh, x(t), oben + hh + 5, { op: 0.4 });
+      s += txt(x(t), oben + hh + 19, String(t), { anchor: "middle", size: 10, op: 0.6 });
+    });
+    [0, 0.25, 0.5, 0.75, 1].forEach((r) => {
+      if (r) s += linie(links, y(r), links + bw, y(r), { op: 0.09, dash: "3 4" });
+      s += txt(links - 9, y(r) + 4, Math.round(r * 100) + " %", { anchor: "end", size: 10, op: 0.6 });
+    });
+    s += txt(links + bw / 2, oben + hh + 40, "Tage seit dem Lernen", { anchor: "middle", size: 11, op: 0.7 });
+    s += txt(15, oben + hh / 2, "abrufbar", { anchor: "middle", size: 11, op: 0.7, rot: -90 });
+
+    // Ohne Wiederholung
+    s += `<path d="${kurve(0, maxT, 1.25)}" fill="none" stroke="var(--vz-rot)"
+       stroke-width="2.4" stroke-dasharray="6 4"></path>`;
+
+    // Mit Wiederholung
+    wdh.forEach((w, i) => {
+      s += `<path d="${kurve(w.ab, w.bis, w.s)}" fill="none" stroke="var(--vz-gruen)" stroke-width="2.6"></path>`;
+      if (i > 0) {
+        // Senkrechter Sprung zurück auf 100 % im Moment des Abrufs
+        s += linie(x(w.ab), y(Math.exp(-(w.ab - wdh[i - 1].ab) / wdh[i - 1].s)), x(w.ab), y(1),
+          { stroke: "var(--vz-gruen)", sw: 1.6, op: 0.55, dash: "3 3" });
+        s += `<circle cx="${x(w.ab)}" cy="${y(1)}" r="4.5" fill="var(--vz-gruen)"></circle>`;
+        s += txt(x(w.ab), oben - 6, `Tag ${w.ab}`, { anchor: "middle", size: 10, weight: 700, fill: "var(--vz-gruen)" });
+      }
+    });
+
+    // Beschriftungen rechts
+    const rx = links + bw + 10;
+    s += txt(rx, y(Math.exp(-maxT / 150)) - 4, "mit Wiederholung", { size: 11.5, weight: 700, fill: "var(--vz-gruen)" });
+    s += txt(rx, y(Math.exp(-maxT / 150)) + 11, "jeder Abruf flacht", { size: 9.5, fill: "var(--vz-gruen)", op: 0.85 });
+    s += txt(rx, y(Math.exp(-maxT / 150)) + 24, "die nächste Kurve ab", { size: 9.5, fill: "var(--vz-gruen)", op: 0.85 });
+    s += txt(rx, y(0.06), "ohne Wiederholung", { size: 11.5, weight: 700, fill: "var(--vz-rot)" });
+    s += txt(rx, y(0.06) + 14, "nach einer Woche", { size: 9.5, fill: "var(--vz-rot)", op: 0.85 });
+    s += txt(rx, y(0.06) + 27, "praktisch nichts mehr", { size: 9.5, fill: "var(--vz-rot)", op: 0.85 });
+
+    // Die wachsenden Abstände sichtbar machen — im leeren Bereich unterhalb
+    // der grünen Kurve und oberhalb der bereits abgesunkenen roten.
+    const ay = oben + hh - 42;
+    [[1, 7], [7, 23]].forEach(([a, b]) => {
+      s += linie(x(a) + 3, ay, x(b) - 3, ay, { stroke: "var(--vz-gruen)", sw: 1.2, op: 0.55 });
+      [a, b].forEach((t) => s += linie(x(t) + (t === a ? 3 : -3), ay - 4, x(t) + (t === a ? 3 : -3), ay + 4,
+        { stroke: "var(--vz-gruen)", sw: 1.2, op: 0.55 }));
+      s += txt((x(a) + x(b)) / 2, ay - 7, `${b - a} Tage Abstand`, { anchor: "middle", size: 10, op: 0.7 });
+    });
+
+    return figur(`0 0 ${B} ${H}`, s,
+      "Schematisch, nicht maßstäblich: Die Kurvenform stammt von Ebbinghaus, die Zahlen sind gerundet. Entscheidend ist der Verlauf — <strong>jeder erfolgreiche Abruf setzt die Abrufbarkeit zurück auf hundert Prozent und macht die folgende Kurve flacher.</strong> Deshalb wachsen die Abstände: ein Tag, sechs Tage, sechzehn Tage. Ohne Wiederholung ist nach einer Woche fast nichts mehr da.",
+      "Vergessenskurve mit und ohne Wiederholung, mit wachsenden Abständen zwischen den Abrufen");
+  }
+
+  /* ============================================== 12 · Lernmethoden */
+
+  function lernmethoden() {
+    const B = 760, H = 500, links = 88, oben = 28, unten = 60, rechts = 26;
+    const bw = B - links - rechts, hh = H - oben - unten;
+
+    // Einordnung nach der Übersichtsarbeit von Dunlosky und Kollegen (2013),
+    // ergänzt um Verfahren aus der Gedächtnis- und Instruktionsforschung.
+    const methoden = [
+      { t: "Abrufen üben", a: 2.4, w: 9.3 },
+      { t: "Verteiltes Üben", a: 1.4, w: 8.4 },
+      { t: "Verschachteln", a: 3.2, w: 7.6 },
+      { t: "Lösungsbeispiele", a: 5.6, w: 7.2 },
+      { t: "Konkrete Beispiele", a: 4.2, w: 6.8 },
+      { t: "Selbsterklären", a: 5.8, w: 6.4 },
+      { t: "Loci-Methode", a: 8.8, w: 6.3 },
+      { t: "Elaborierendes Fragen", a: 3.6, w: 6.0 },
+      { t: "Dual Coding", a: 6.6, w: 6.0 },
+      { t: "Zusammenfassen", a: 7.6, w: 4.2 },
+      { t: "Mind Map", a: 6.2, w: 3.4 },
+      { t: "Schlüsselwortmethode", a: 8.2, w: 2.8 },
+      { t: "Wiederlesen", a: 5.6, w: 1.9 },
+      { t: "Markieren", a: 2.2, w: 1.5 },
+      { t: "Nach Lerntyp lernen", a: 5.0, w: 0.6 },
+    ];
+
+    // Die Wirkungsachse reicht bis 11, damit über den besten Verfahren Luft
+    // bleibt — bei 10 saß „Abrufen üben" genau auf dem Feldtitel.
+    const maxA = 10, maxW = 11;
+    const x = (a) => links + (a / maxA) * bw;
+    const y = (w) => oben + hh - (w / maxW) * hh;
+    const gA = 5, gW = maxW / 2;             // Trennlinien
+
+    let s = PFEIL;
+
+    const felder = [
+      { xa: 0, xb: gA, ya: gW, yb: maxW, ecke: "ol", t: "Sofort anfangen", u: "viel Wirkung, wenig Aufwand", f: "var(--vz-gruen)" },
+      { xa: gA, xb: maxA, ya: gW, yb: maxW, ecke: "or", t: "Lohnt sich, kostet aber", u: "gezielt einsetzen", f: "var(--vz-blau)" },
+      { xa: 0, xb: gA, ya: 0, yb: gW, ecke: "ul", t: "Harmlos, kein Ersatz", u: "als alleinige Methode zu wenig", f: "var(--vz-grau)" },
+      { xa: gA, xb: maxA, ya: 0, yb: gW, ecke: "ur", t: "Verschenkte Zeit", u: "viel Aufwand, wenig Ertrag", f: "var(--vz-rot)" },
+    ];
+    felder.forEach((f) => {
+      s += rechteck(x(f.xa), y(f.yb), x(f.xb) - x(f.xa), y(f.ya) - y(f.yb), { fill: f.f, op: 0.07, r: 0 });
+      const re = f.ecke[1] === "r";
+      const tx = re ? x(f.xb) - 10 : x(f.xa) + 10;
+      const ty = f.ecke[0] === "o" ? y(f.yb) + 19 : y(f.ya) - 22;
+      s += txt(tx, ty, f.t, { size: 12.5, weight: 700, fill: f.f, op: 0.9, anchor: re ? "end" : "start" });
+      s += txt(tx, ty + 14, f.u, { size: 9.5, fill: f.f, op: 0.72, anchor: re ? "end" : "start" });
+    });
+
+    s += linie(x(gA), oben, x(gA), oben + hh, { sw: 1.5, op: 0.4, dash: "5 4" });
+    s += linie(links, y(gW), links + bw, y(gW), { sw: 1.5, op: 0.4, dash: "5 4" });
+
+    // Achsen
+    s += linie(links, oben, links, oben + hh, { op: 0.45 });
+    s += linie(links, oben + hh, links + bw, oben + hh, { op: 0.45 });
+    s += linie(links, oben + hh + 34, links + bw, oben + hh + 34, { op: 0.35, sw: 1.5, marker: "pfeil" });
+    s += txt(links, oben + hh + 50, "wenig Aufwand", { size: 10, op: 0.6 });
+    s += txt(links + bw, oben + hh + 50, "viel Aufwand", { anchor: "end", size: 10, op: 0.6 });
+    s += txt(20, oben + hh / 2, "Wirksamkeit für das Behalten", { anchor: "middle", size: 11, op: 0.7, rot: -90 });
+
+    // Punkte
+    methoden.forEach((m) => {
+      const px = x(m.a), py = y(m.w);
+      const feld = felder.find((f) => m.a >= f.xa && m.a < f.xb && m.w >= f.ya && m.w < f.yb) || felder[2];
+      s += `<circle cx="${px}" cy="${py}" r="5" fill="${feld.f}" opacity=".92"></circle>`;
+      const raus = px + m.t.length * 5.5 + 14 > links + bw;
+      s += txt(raus ? px - 9 : px + 9, py + 4, m.t,
+        { size: 10.5, op: 0.92, anchor: raus ? "end" : "start" });
+    });
+
+    return figur(`0 0 ${B} ${H}`, s,
+      "Die drei wirksamsten Verfahren liegen links oben — sie kosten <strong>keine zusätzliche Zeit</strong>, sondern verlangen eine andere Verwendung derselben. Markieren ist billig und bringt fast nichts; Wiederlesen kostet und bringt fast nichts. Die Einordnung folgt in weiten Teilen der Übersichtsarbeit von Dunlosky und Kollegen (2013); die Achsen sind Einschätzungen, keine Messwerte.",
+      "Lernmethoden nach Wirksamkeit und Aufwand in vier Feldern");
+  }
+
   /* ------------------------------------------------------- Registrieren */
 
   Object.assign(VIZ.benannt, {
+    "vergessenskurve": vergessenskurve,
+    "lernmethoden": lernmethoden,
     "bajonett-skala": bajonettSkala,
     "arbeitszeit-tag": arbeitszeitTag,
     "sternschema": sternschema,

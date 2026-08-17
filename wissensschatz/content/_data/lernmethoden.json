@@ -1,0 +1,41 @@
+{
+  "title": "Lernmethoden nach Befundlage",
+  "topic": "lernen",
+  "note": "Die Einstufung folgt in weiten Teilen der Übersichtsarbeit von Dunlosky, Rawson, Marsh, Nathan und Willingham (2013), die zehn verbreitete Techniken systematisch bewertet hat, ergänzt um Verfahren aus der Gedächtnis- und Instruktionsforschung. „Wirksamkeit\" meint die Behaltensleistung nach Tagen bis Wochen, nicht das Gefühl während des Lernens — die beiden gehen regelmäßig auseinander. Effektstärken schwanken mit Fach, Vorwissen und Alter.",
+  "columns": [
+    { "key": "m", "label": "Methode" },
+    { "key": "kat", "label": "Kategorie" },
+    { "key": "wirkung", "label": "Wirksamkeit" },
+    { "key": "aufwand", "label": "Aufwand" },
+    { "key": "txt", "label": "Wofür, und was zu beachten ist" },
+    { "key": "lvl", "label": "Stufe", "type": "level" }
+  ],
+  "items": [
+    { "m": "Abrufen üben (Selbsttest, Lernkarten)", "kat": "Kernverfahren", "wirkung": "hoch", "aufwand": "gering", "txt": "Wirkt über alle Fächer, Altersgruppen und Materialarten. Auch ein gescheiterter Abrufversuch vor dem Nachlesen wirkt. Kern des Testing Effects.", "lvl": 1 },
+    { "m": "Verteiltes Üben (Spacing)", "kat": "Kernverfahren", "wirkung": "hoch", "aufwand": "gering", "txt": "Dieselbe Zeit über mehrere Tage schlägt dieselbe Zeit am Stück deutlich. Kostet keine Mehrarbeit, nur Planung.", "lvl": 1 },
+    { "m": "Verschachteltes Üben (Interleaving)", "kat": "Kernverfahren", "wirkung": "mittel bis hoch", "aufwand": "gering", "txt": "Stark bei ähnlichen, verwechselbaren Aufgabentypen. Fühlt sich schlechter an als Blocken und ist trotzdem besser — der klassische Fall einer wünschenswerten Erschwernis.", "lvl": 3 },
+    { "m": "Elaborierendes Fragen (Warum ist das so?)", "kat": "Verarbeitung", "wirkung": "mittel", "aufwand": "mittel", "txt": "Wirkt gut bei Faktenwissen mit Zusammenhang; braucht Vorwissen, sonst entstehen plausible falsche Erklärungen.", "lvl": 2 },
+    { "m": "Selbsterklären", "kat": "Verarbeitung", "wirkung": "mittel", "aufwand": "mittel", "txt": "Sich beim Lernen laut erklären, was gerade passiert und warum. Wirkt besonders bei Verfahren und Beweisen.", "lvl": 3 },
+    { "m": "Konkrete Beispiele bilden", "kat": "Verarbeitung", "wirkung": "mittel", "aufwand": "mittel", "txt": "Abstraktes an mehreren verschiedenen Beispielen festmachen. Ein einzelnes Beispiel bindet das Wissen an seinen Kontext.", "lvl": 2 },
+    { "m": "Dual Coding (Text plus Bild)", "kat": "Verarbeitung", "wirkung": "mittel", "aufwand": "mittel", "txt": "Wort und Bild zusammen schlagen beides einzeln — sofern das Bild erklärt und nicht schmückt. Dekorative Bilder schaden eher.", "lvl": 3 },
+    { "m": "Zusammenfassen", "kat": "Verarbeitung", "wirkung": "gering bis mittel", "aufwand": "hoch", "txt": "Wirkt nur, wenn man es gelernt hat; ungeübte Zusammenfassungen schreiben den Text ab. Selbst formuliert deutlich besser als übernommen.", "lvl": 3 },
+    { "m": "Markieren und Unterstreichen", "kat": "Verarbeitung", "wirkung": "gering", "aufwand": "gering", "txt": "Fast wirkungslos, weil passiv. Kann schaden: Markiertes wirkt vertraut und erzeugt das Gefühl, es zu können.", "lvl": 1 },
+    { "m": "Wiederlesen", "kat": "Verarbeitung", "wirkung": "gering", "aufwand": "mittel", "txt": "Die häufigste und eine der schwächsten Methoden. Erzeugt Vertrautheit, kaum Behaltensleistung. Als erster Durchgang sinnvoll, als Wiederholung nicht.", "lvl": 1 },
+    { "m": "Loci-Methode (Gedächtnispalast)", "kat": "Mnemotechnik", "wirkung": "hoch für Reihenfolgen", "aufwand": "hoch", "txt": "Sehr wirksam für geordnete Listen, wirkungslos für Verständnis. Aufbau kostet Zeit, die sich nur bei dauerhaft gebrauchtem Stoff lohnt.", "lvl": 4 },
+    { "m": "Schlüsselwortmethode", "kat": "Mnemotechnik", "wirkung": "gering bis mittel", "aufwand": "hoch", "txt": "Für Vokabeln kurzfristig gut, langfristig schwächer als schlichtes Abrufen. Die Eselsbrücke muss selbst mitgelernt werden.", "lvl": 3 },
+    { "m": "Chunking (Bündeln)", "kat": "Mnemotechnik", "wirkung": "mittel", "aufwand": "gering", "txt": "Erweitert die nutzbare Arbeitsspeicherkapazität. Funktioniert nur mit Vorwissen — Anfänger können nicht bündeln.", "lvl": 2 },
+    { "m": "Mind Map erstellen", "kat": "Verarbeitung", "wirkung": "gering bis mittel", "aufwand": "mittel", "txt": "Nützlich zum Ordnen und Planen. Als Lernmethode schwächer als Abrufen; das Erstellen fühlt sich produktiver an, als es ist.", "lvl": 2 },
+    { "m": "Concept Map ausfüllen (aus dem Gedächtnis)", "kat": "Verarbeitung", "wirkung": "mittel", "aufwand": "mittel", "txt": "Deutlich besser als Concept Mapping mit offener Vorlage — der Unterschied liegt darin, dass abgerufen statt abgeschrieben wird.", "lvl": 3 },
+    { "m": "Handschriftliche Notizen", "kat": "Aufnahme", "wirkung": "umstritten", "aufwand": "mittel", "txt": "Die viel zitierte Überlegenheit gegenüber der Tastatur ließ sich in Replikationen nicht bestätigen. Entscheidend ist, ob umformuliert oder mitgeschrieben wird — nicht das Werkzeug.", "lvl": 3 },
+    { "m": "Cornell-Notizen", "kat": "Aufnahme", "wirkung": "mittel", "aufwand": "gering", "txt": "Der Nutzen liegt in der Fragenspalte: Sie macht aus der Mitschrift automatisch Abrufmaterial.", "lvl": 2 },
+    { "m": "SQ3R und verwandte Leseschemata", "kat": "Aufnahme", "wirkung": "gering bis mittel", "aufwand": "mittel", "txt": "Wirkt vor allem über die enthaltenen Abruf- und Fragephasen. Das Schema selbst trägt wenig; die beiden R sind der Wirkstoff.", "lvl": 3 },
+    { "m": "Ausgearbeitete Lösungsbeispiele", "kat": "Anleitung", "wirkung": "hoch für Anfänger", "aufwand": "mittel", "txt": "Für Einsteiger wirksamer als selbst probieren. Kehrt sich mit wachsendem Können um (Expertise-Umkehr-Effekt).", "lvl": 4 },
+    { "m": "Feedback", "kat": "Anleitung", "wirkung": "sehr unterschiedlich", "aufwand": "mittel", "txt": "In der Metaanalyse von Kluger und DeNisi verschlechterte rund ein Drittel der Feedbackmaßnahmen die Leistung — vor allem, wenn es auf die Person statt auf die Aufgabe zielte.", "lvl": 4 },
+    { "m": "Schlaf nach dem Lernen", "kat": "Rahmen", "wirkung": "hoch", "aufwand": "gering", "txt": "Konsolidierung findet im Schlaf statt. Eine durchlernte Nacht kostet mehr, als die zusätzlichen Stunden bringen.", "lvl": 2 },
+    { "m": "Körperliche Bewegung", "kat": "Rahmen", "wirkung": "mittel", "aufwand": "gering", "txt": "Moderate Ausdauerbewegung verbessert Aufmerksamkeit und Gedächtnisleistung. Wirkt indirekt, aber verlässlich.", "lvl": 2 },
+    { "m": "Lernen nach Lerntyp (visuell, auditiv, haptisch)", "kat": "Widerlegt", "wirkung": "nicht belegt", "aufwand": "mittel", "txt": "Die Meshing-Hypothese — Unterricht passend zum Typ wirke besser — ist in Studien mit passendem Design nicht bestätigt worden. Präferenz besteht, Wirkung auf den Lernerfolg nicht.", "lvl": 3 },
+    { "m": "Lernpyramide (10 % gelesen, 90 % getan)", "kat": "Widerlegt", "wirkung": "frei erfunden", "aufwand": "—", "txt": "Die Prozentzahlen sind ohne Datengrundlage entstanden und lassen sich auf keine Studie zurückführen. Dales Kegel von 1946 enthielt keine Zahlen.", "lvl": 3 },
+    { "m": "Rechte und linke Gehirnhälfte als Lerntypen", "kat": "Widerlegt", "wirkung": "nicht belegt", "aufwand": "—", "txt": "Hemisphärenspezialisierung existiert; Menschen als „links-\" oder „rechtsdominant\" einzuteilen ist daraus nicht ableitbar.", "lvl": 3 },
+    { "m": "Nebenher lernen (Video, Chat, Musik mit Text)", "kat": "Widerlegt", "wirkung": "schädlich", "aufwand": "—", "txt": "Aufmerksamkeit wird umgeschaltet, nicht geteilt. Jeder Wechsel kostet Zeit und Genauigkeit; die Selbsteinschätzung der Betroffenen ist dabei besonders unzuverlässig.", "lvl": 2 }
+  ]
+}
