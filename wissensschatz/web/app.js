@@ -17,6 +17,7 @@
     { id: "start", label: "Übersicht" },
     { id: "wissen", label: "Wissen" },
     { id: "lernen", label: "Lernen" },
+    { id: "einspeisen", label: "Einspeisen" },
     { id: "karte", label: "Karte" },
     { id: "dienstplan", label: "Dienstplan" },
     { id: "organisation", label: "Selbstorganisation" },
@@ -72,6 +73,7 @@
       case "lernen":       return seiteLernen();
       case "karte":        return seiteKarte();
       case "dienstplan":   return DIENSTPLAN_UI.zeichnen(app);
+      case "einspeisen":   return EINSPEISEN.zeichnen(app);
       case "organisation": return seiteOrganisation();
       case "luecken":      return seiteLuecken();
       case "tresor":       return VAULT.zeichnen(app);

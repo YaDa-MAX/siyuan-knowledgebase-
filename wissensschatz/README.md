@@ -22,7 +22,7 @@ Nach Änderungen am Inhalt:
 ```bash
 cd wissensschatz
 node tools/build.mjs   # Index neu bauen
-node tools/test.mjs    # Selbsttest, inklusive der Regeln des Dienstplan-Prüfers
+node tools/test.mjs    # Selbsttest, inklusive der Regeln von Prüfer und Kurator
 ```
 
 Node.js ≥ 18, keine Abhängigkeiten.
@@ -42,7 +42,7 @@ Node.js ≥ 18, keine Abhängigkeiten.
 | **Führung & HR** | Die ersten 100 Tage, Führungs- und Motivationstheorien, Führungsstile und Delegation, Gesprächsführung, Entwicklungsbegleitung, Team- und Konfliktdynamik, Vergütung und Anreize, Recruiting und Bindung, Selbstführung, HR-Kennzahlen inkl. Hotelkennzahlen |
 | **Arbeitsrecht DE** | Rechtsquellen, Vertrag und Befristung, Arbeitszeit mit den Gaststätten-Ausnahmen, Jugendarbeitsschutz, Vergütung und Mindestlohn, Urlaub und Krankheit, Mutterschutz und Schwerbehinderung, Betriebsrat und Arbeitsschutz, Ausbildung, Beendigung — mit durchgehendem Fokus Hotellerie |
 | **Lernen** | Gedächtnis und Konsolidierung, Vergessenskurve und der Unterschied zwischen Speicher- und Abrufstärke, Abrufeffekt, verteiltes und verschachteltes Üben, Elaboration und Dual Coding, wünschenswerte Erschwernisse, Metakognition, Motivation und Volition, Lernplanung, Textarbeit und Notizen, Mnemotechniken, Transfer im Beruf, Anleiten mit Cognitive Load Theory — **und ein eigener Teil zur Befundlage**: Lerntypen und die verbreiteten Lernmythen, jeweils mit Herkunft, Studienlage und dem, was übrig bleibt |
-| **Meta** | Aufbau, Fütterungswege, Pflegeroutine, Sicherung, Tresor und Übergabe, Lerntheorie hinter dem Lernmodus, Wissensarchitektur, Anleitung für neue Themengebiete |
+| **Meta** | Aufbau, Fütterungswege, Kuratierung neuen Wissens, Pflegeroutine, Sicherung, Tresor und Übergabe, Lerntheorie hinter dem Lernmodus, Wissensarchitektur, Anleitung für neue Themengebiete |
 
 Dazu einsatzfertige Vorlagen unter `vorlagen/`: VBA-Module, SQL-Referenzen,
 Office Scripts, Power-Query-Abfragen und Tabellenvorlagen.
@@ -149,6 +149,40 @@ node tools/feed.mjs --titel "XVERWEIS mit zwei Kriterien" \
 Legt eine Vorlage an, vergibt eine ID und baut den Index neu. `--hilfe` zeigt alle Optionen.
 Rohes darf in `meta/inbox` — lieber unfertig erfassen als gar nicht.
 
+### Einspeisen und kuratieren
+
+Für alles, was noch keinen Platz hat, gibt es den Menüpunkt **Einspeisen** — und dahinter
+eine klare Arbeitsteilung:
+
+> **Die Maschine platziert. Der Agent formuliert.**
+
+Beim Tippen vergleicht `web/kurator.js` den Text mit jedem vorhandenen Knoten
+(IDF-gewichteter Kosinus über Tags, Titel und Fließtext) und schlägt vor: Themengebiet,
+Pfad, Stufe, Typ, Tags, Voraussetzungen und Querverweise — **und meldet, wenn es das
+schon gibt**. Drei Knöpfe führen weiter: *Agentenauftrag kopieren* erzeugt einen
+vollständigen Auftrag für ein Sprachmodell, *Als Knoten speichern* legt die Datei mit
+fertigem Frontmatter an, *In die Sammlung* parkt den Entwurf.
+
+Dasselbe über die Kommandozeile:
+
+```bash
+pbpaste | node tools/kuratieren.mjs --stdin --titel "…" --briefing   # Auftrag
+node tools/kuratieren.mjs --datei notiz.md --schreiben               # Entwurfsknoten
+node tools/kuratieren.mjs --inbox                                    # Posteingang
+```
+
+Die Einordnung läuft **offline und ohne fremden Dienst**. Das ist keine Bequemlichkeit:
+Ein Archiv für vierzig Jahre darf seinen Aufnahmeweg nicht an ein Sprachmodell hängen,
+das es in fünf Jahren vielleicht nicht mehr gibt. Ohne Agent entsteht ein Entwurfsknoten
+mit `> TODO:` statt eines ausformulierten — der Agent ist Komfort, kein Fundament.
+
+Die Schwellen sind an echtem Bestand gemessen, nicht geschätzt: Zwei beliebige Knoten
+erreichen im Median 0,017 Ähnlichkeit, das ähnlichste echte Paar 0,34; eine kurze
+Paraphrase eines vorhandenen Knotens 0,15–0,26. Die erste Fassung setzte die
+Duplikatschwelle auf 0,42 — sie hätte nie ausgelöst. Deshalb prüft
+`node tools/test-kurator.mjs` gegen den echten Bestand: Paraphrasen **müssen** gemeldet,
+fachfremde Notizen dürfen **nicht** zuversichtlich einsortiert werden.
+
 Jeder Knoten trägt seine **Herkunft** (`ki` / `nutzer` / `gemischt`) und seinen
 **Reifegrad** (`entwurf` / `geprueft` / `veraltet`). Eigene Erfahrung ist unersetzbar,
 KI-Inhalte sind nachproduzierbar — bei einem Widerspruch in Jahren muss erkennbar
@@ -220,9 +254,10 @@ gesichert. `tresor/` und Schlüsseldateien sind von der Versionsverwaltung ausge
 wissensschatz/
   content/          Wissen (Markdown) + _data/ (Referenzdatensätze) + _topics.json
   vorlagen/         VBA · SQL · Office Scripts · Power Query · Tabellen
-  tools/            build.mjs · feed.mjs · test.mjs · test-dienstplan.mjs · lib/
+  tools/            build.mjs · feed.mjs · kuratieren.mjs · test.mjs · test-*.mjs · lib/
   web/              index.html · app.css · app.js · kb-data.js (erzeugt)
-                    viz.js · diagramme.js · dienstplan.js · dienstplan-ui.js · vault.js
+                    viz.js · diagramme.js · dienstplan.js · kurator.js · vault.js
+                    dienstplan-ui.js · einspeisen.js
   tresor/           verschlüsselte Sicherungen (nicht versioniert)
   .state/           Gedächtnis des Builds für die Neubewertung
 ```
@@ -240,3 +275,4 @@ wissensschatz/
 | Herkunft am Knoten | eigene Erfahrung von nachproduzierbarem Wissen unterscheidbar halten |
 | Tresor im Browser | Geheimnisse verlassen das Gerät nie |
 | Prüfregeln getrennt von der Oberfläche | dieselbe Datei läuft im Browser und im Selbsttest — Regeln über geltendes Recht müssen prüfbar sein, nicht behauptet |
+| Kuratierung ohne Sprachmodell | der Aufnahmeweg darf nicht an einem Dienst hängen, den es in fünf Jahren vielleicht nicht mehr gibt |

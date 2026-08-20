@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-10
 tags: [routine, backup, archivierung, langzeit]
 prereqs: [meta-start]
-related: [meta-fuettern, meta-uebergabe, druck-medien, foto-filter]
+related: [meta-fuettern, meta-uebergabe, druck-medien, foto-filter, meta-kuratierung]
 summary: Was wöchentlich, monatlich und jährlich zu tun ist — und die Sicherungsstrategie für einen Bestand, der Jahrzehnte überstehen soll.
 ---
 

@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [erweitern, themengebiet, datensatz, visualisierung, anleitung]
 prereqs: [meta-fuettern, meta-wissensarchitektur]
-related: [meta-pflegeroutine, meta-start, lernen-einstieg]
+related: [meta-pflegeroutine, meta-start, lernen-einstieg, meta-kuratierung]
 summary: Der vollständige Ablauf vom leeren Thema bis zur eigenen Visualisierung — die Anleitung, die in fünf Jahren gebraucht wird, wenn niemand mehr weiß, wie es ging.
 ---
 

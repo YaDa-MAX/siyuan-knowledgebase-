@@ -216,12 +216,14 @@ console.log(`  Hinweis: ${eingebunden.size} Fachgrafiken und ` +
  * — eine zweite Testdatei, an die man denken muss, wird irgendwann nicht mehr
  * ausgeführt, und dann rechnet ein Werkzeug jahrelang unbemerkt falsch.
  */
-console.log("\nDienstplan-Prüfer");
-const dp = spawnSync(process.execPath, [join(ROOT, "tools", "test-dienstplan.mjs")], { encoding: "utf8" });
-const dpZeile = (dp.stdout || "").trim().split("\n").pop() || "";
-const dpFehler = (dp.stdout || "").split("\n").filter((z) => z.includes("FEHL"));
-pruefe(`Regeltest bestanden (${dpZeile})`, dp.status === 0,
-  dpFehler.join(" · ") || (dp.stderr || "").slice(0, 200));
+for (const [titel, datei] of [["Dienstplan-Prüfer", "test-dienstplan.mjs"], ["Kurator", "test-kurator.mjs"]]) {
+  console.log(`\n${titel}`);
+  const r = spawnSync(process.execPath, [join(ROOT, "tools", datei)], { encoding: "utf8" });
+  const zeile = (r.stdout || "").trim().split("\n").pop() || "";
+  const fehler = (r.stdout || "").split("\n").filter((z) => z.includes("FEHL"));
+  pruefe(`Regeltest bestanden (${zeile})`, r.status === 0,
+    fehler.join(" · ") || (r.stderr || "").slice(0, 200));
+}
 
 /* ------------------------------------------------------------ Ergebnis */
 

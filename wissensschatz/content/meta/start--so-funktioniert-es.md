@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-10
 tags: [anleitung, konventionen, einstieg]
 prereqs: []
-related: [meta-fuettern, meta-pflegeroutine, meta-uebergabe, meta-lerntheorie]
+related: [meta-fuettern, meta-pflegeroutine, meta-uebergabe, meta-lerntheorie, meta-kuratierung]
 summary: Aufbau, Bedienung und die drei Mechanismen, die dafür sorgen, dass sich das Archiv beim Wachsen selbst neu ordnet.
 ---
 
