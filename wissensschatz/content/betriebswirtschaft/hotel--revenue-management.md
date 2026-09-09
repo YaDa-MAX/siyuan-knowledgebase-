@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [revenue, preissteuerung, verdraengung, vertrieb, segmentierung]
 prereqs: [bwl-hotelkennzahlen, bwl-deckungsbeitrag]
-related: [bwl-budget, bwl-personalkosten, powerbi-visuals, fuehrung-kennzahlen]
+related: [bwl-budget, bwl-personalkosten, powerbi-visuals, fuehrung-kennzahlen, hotelabr-storno]
 summary: Warum Preissteuerung nur bei verderblicher Kapazität funktioniert, was Verdrängung kostet, wie eine Vorbuchungskurve gelesen wird — und wo der Ansatz in Misstrauen umschlägt.
 ---
 

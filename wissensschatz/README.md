@@ -27,6 +27,19 @@ node tools/test.mjs    # Selbsttest, inklusive der Regeln von Prüfer und Kurato
 
 Node.js ≥ 18, keine Abhängigkeiten.
 
+Optional, wenn Playwright vorhanden ist:
+
+```bash
+node tools/smoke.mjs   # Browsertest: alle Ansichten, alle Fachgrafiken
+```
+
+Er rendert jede Grafik im echten Browser und misst die Rahmen aller
+Beschriftungen gegeneinander. **Überlappende Beschriftungen sind ein Fehler**
+— das war vorher Augenmaß am Bildschirm und damit die einzige Qualität im
+Projekt, die niemand nachprüfen konnte. Fehlt Playwright, endet der Test mit
+einem Hinweis statt mit einem Fehler; das Archiv selbst bleibt
+abhängigkeitsfrei.
+
 ---
 
 ## Was drin ist
@@ -39,6 +52,7 @@ Node.js ≥ 18, keine Abhängigkeiten.
 | **Druck** | Grundbegriffe, 21 Druckverfahren von Thermodirekt bis Tiefdruck, Entscheidungshilfe nach Aufgabe, Farbmanagement und Druckvorstufe, Medien und Archivbeständigkeit, Etiketten und Kennzeichnung, Großformat und Werbetechnik, Fine-Art-Fotodruck |
 | **Prozessautomation** | Kleine Hebel für den Einstieg, Prozessanalyse und BPMN, Automatisierbarkeit und ROI, Werkzeugleiter, Power Platform, KI im Prozess mit Grenzen und Absicherung, Einführung, Governance und Mitbestimmung |
 | **Betriebswirtschaft** | Umsatz-Kosten-Ergebnis-Kette und Umsatzsteuer im Gastgewerbe, Wareneinsatz mit Bestandsveränderung, Schwund und seine wahren Ursachen, Personalkosten und Vollzeitäquivalente, Preiskalkulation und Rückwärtsrechnung, Deckungsbeitrag und Break-even, Menu Engineering, Hotelkennzahlen bis GOPPAR und USALI, Budget und Abweichungszerlegung, Revenue Management, Liquidität im Saisonbetrieb, Investitionsrechnung — plus 27 Kennzahlen mit ihren typischen Fehlerquellen |
+| **Hotelabrechnung** | Woher die Zahlen kommen, bevor sie Kennzahlen werden: Transaktionscodes als Skelett des Systems, die vier Ledger und der Weg einer Forderung durch sie, der Nachtlauf, Handbuchungen und Negativbuchungen mit ihrer Gegenbuchungslogik, die tägliche Abstimmung gegen den Manager Flash, Storno/No-Show/Anzahlung, Debitorenalterung, Kassenführung mit GoBD/TSE/Verfahrensdokumentation, Schnittstellen und ihre stillen Fehler, Monatsabschluss — plus ein Prüfkatalog mit 25 Positionen nach Turnus und Auslöser |
 | **Führung & HR** | Die ersten 100 Tage, Führungs- und Motivationstheorien, Führungsstile und Delegation, Gesprächsführung, Entwicklungsbegleitung, Team- und Konfliktdynamik, Vergütung und Anreize, Recruiting und Bindung, Selbstführung, HR-Kennzahlen inkl. Hotelkennzahlen |
 | **Arbeitsrecht DE** | Rechtsquellen, Vertrag und Befristung, Arbeitszeit mit den Gaststätten-Ausnahmen, Jugendarbeitsschutz, Vergütung und Mindestlohn, Urlaub und Krankheit, Mutterschutz und Schwerbehinderung, Betriebsrat und Arbeitsschutz, Ausbildung, Beendigung — mit durchgehendem Fokus Hotellerie |
 | **Lernen** | Gedächtnis und Konsolidierung, Vergessenskurve und der Unterschied zwischen Speicher- und Abrufstärke, Abrufeffekt, verteiltes und verschachteltes Üben, Elaboration und Dual Coding, wünschenswerte Erschwernisse, Metakognition, Motivation und Volition, Lernplanung, Textarbeit und Notizen, Mnemotechniken, Transfer im Beruf, Anleiten mit Cognitive Load Theory — **und ein eigener Teil zur Befundlage**: Lerntypen und die verbreiteten Lernmythen, jeweils mit Herkunft, Studienlage und dem, was übrig bleibt |
@@ -47,12 +61,12 @@ Node.js ≥ 18, keine Abhängigkeiten.
 Dazu einsatzfertige Vorlagen unter `vorlagen/`: VBA-Module, SQL-Referenzen,
 Office Scripts, Power-Query-Abfragen und Tabellenvorlagen.
 
-**Dreizehn Fachgrafiken** (`web/diagramme.js`) zeigen jeweils einen Mechanismus, den
+**Vierzehn Fachgrafiken** (`web/diagramme.js`) zeigen jeweils einen Mechanismus, den
 Fließtext nur umständlich erklärt — etwa alle Bajonette auf einer Auflagemaß-Achse
 mit der Richtung der Adaptierbarkeit, denselben Spätdienst unter drei
 Arbeitszeitregimen mit dem jeweils frühesten nächsten Dienstbeginn, eine
-Speisekarte in den vier Feldern des Menu Engineerings, oder die Vergessenskurve
-mit und ohne Wiederholung.
+Speisekarte in den vier Feldern des Menu Engineerings, dieselbe Forderung an
+vier Orten im Hotelsystem, oder die Vergessenskurve mit und ohne Wiederholung.
 
 > **Zum Themengebiet Lernen:** Es enthält ausdrücklich auch, was sich als
 > **unwirksam** erwiesen hat — die Lerntypen-Modelle nach Vester, VAK/VARK und Kolb,
@@ -254,7 +268,8 @@ gesichert. `tresor/` und Schlüsseldateien sind von der Versionsverwaltung ausge
 wissensschatz/
   content/          Wissen (Markdown) + _data/ (Referenzdatensätze) + _topics.json
   vorlagen/         VBA · SQL · Office Scripts · Power Query · Tabellen
-  tools/            build.mjs · feed.mjs · kuratieren.mjs · test.mjs · test-*.mjs · lib/
+  tools/            build.mjs · feed.mjs · kuratieren.mjs · test.mjs · test-*.mjs
+                    smoke.mjs (optional, braucht Playwright) · lib/
   web/              index.html · app.css · app.js · kb-data.js (erzeugt)
                     viz.js · diagramme.js · dienstplan.js · kurator.js · vault.js
                     dienstplan-ui.js · einspeisen.js

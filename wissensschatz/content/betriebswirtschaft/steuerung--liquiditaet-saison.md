@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [liquiditaet, saison, zahlungsziel, planung, risiko]
 prereqs: [bwl-einstieg]
-related: [bwl-budget, bwl-investition, bwl-personalkosten, excel-modellbau]
+related: [bwl-budget, bwl-investition, bwl-personalkosten, excel-modellbau, hotelabr-debitoren]
 summary: Warum Betriebe an der Zahlungsunfähigkeit sterben und nicht am Verlust, wie eine 13-Wochen-Vorschau aufgebaut wird — und der eine Vorteil, den das Gastgewerbe gegenüber fast jeder anderen Branche hat.
 ---
 

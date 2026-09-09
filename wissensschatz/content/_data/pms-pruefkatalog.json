@@ -1,0 +1,41 @@
+{
+  "title": "Prüfkatalog Tagesabschluss",
+  "topic": "hotelabrechnung",
+  "note": "Die Berichtsnamen folgen der in Opera Cloud üblichen Bezeichnung; andere Systeme nennen dieselben Auswertungen anders, die Prüflogik bleibt. Die Spalte „Wie oft\" ist ein Vorschlag für einen mittelgroßen Stadthotelbetrieb — bei hohem Bankett- oder Gruppenanteil lohnt sich mehr, bei kleinen Häusern weniger. Kein Prüfpunkt ersetzt die Frage, ob die Buchung fachlich richtig war.",
+  "columns": [
+    { "key": "punkt", "label": "Prüfpunkt" },
+    { "key": "kat", "label": "Bereich" },
+    { "key": "bericht", "label": "Bericht" },
+    { "key": "achten", "label": "Worauf achten" },
+    { "key": "alarm", "label": "Warnzeichen" },
+    { "key": "wie", "label": "Wie oft" },
+    { "key": "lvl", "label": "Stufe", "type": "level" }
+  ],
+  "items": [
+    { "punkt": "Handbuchungen je Kassierer", "kat": "Buchungen", "bericht": "Journal by Cashier and Transaction Code", "achten": "Manuell gepostete Erlöse ohne Schnittstellenherkunft — jede braucht einen erkennbaren Anlass.", "alarm": "Eine Person mit auffällig vielen Handbuchungen, oder Handbuchungen auf Codes, die sonst nur die Kasse liefert.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Negativbuchungen", "kat": "Buchungen", "bericht": "Journal by Cashier and Transaction Code", "achten": "Jede erlösmindernde Buchung mit Begründung im Buchungstext.", "alarm": "Negativbuchung ohne Text, ohne passende Ursprungsbuchung oder kurz vor Schichtende.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Paarigkeit der Gegenbuchungen", "kat": "Buchungen", "bericht": "Journal by Cashier and Transaction Code", "achten": "Zu jeder Korrektur gehört eine Ursprungsbuchung mit gleichem Code und gleichem Betrag.", "alarm": "Einzelne Negativbuchung ohne Gegenstück — dann wurde Erlös gemindert, der nie gebucht war.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "Buchungen außerhalb der Schicht", "kat": "Buchungen", "bericht": "Journal by Cashier and Transaction Code", "achten": "Zeitstempel gegen die Dienstzeiten.", "alarm": "Buchungen zu Zeiten, in denen die Person nicht im Dienst war — Kennwortweitergabe.", "wie": "wöchentlich", "lvl": 3 },
+    { "punkt": "Rabatte und Kulanz", "kat": "Buchungen", "bericht": "Revenue by Transaction Codes", "achten": "Höhe und Häufigkeit je Code und je Person, im Zeitvergleich.", "alarm": "Rabattquote steigt ohne Aktion; Kulanz konzentriert sich auf wenige Personen.", "wie": "wöchentlich", "lvl": 3 },
+    { "punkt": "Manager Flash gegen Transaktionscodes", "kat": "Abstimmung", "bericht": "Manager Flash + Revenue by Transaction Codes", "achten": "Erlössummen je Bereich müssen übereinstimmen.", "alarm": "Differenz, die sich nicht aus Stichtag oder Steuerausweis erklärt — dann ist die Code-Zuordnung falsch.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "Zahlungsarten gegen Kassenbestand", "kat": "Abstimmung", "bericht": "Cashier Closure / Journal", "achten": "Bar, Karte und Gutschein je Kassierer gegen den tatsächlichen Bestand.", "alarm": "Wiederkehrende Differenzen in dieselbe Richtung.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Kartenumsatz gegen Dienstleisterabrechnung", "kat": "Abstimmung", "bericht": "Journal + Abrechnung des Zahlungsdienstleisters", "achten": "Summen und Eingangstage; Karteneingänge kommen verzögert.", "alarm": "Buchung im PMS ohne Eingang beim Dienstleister.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "Bestand Guest Ledger", "kat": "Ledger", "bericht": "Trial Balance / Ledger Summary", "achten": "Vortrag plus Buchungen minus Zahlungen ergibt den neuen Bestand.", "alarm": "Der Bestand geht nicht auf — dann fehlt eine Buchung oder eine wurde umdatiert.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "PM-Konten mit Saldo", "kat": "Ledger", "bericht": "PM Account by Room", "achten": "Sammelkonten für Gruppen, Bankett und Dauerposten.", "alarm": "Saldo bleibt über die Veranstaltung hinaus stehen; Konto ohne erkennbaren Eigentümer.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "Altersstruktur Guest Ledger", "kat": "Ledger", "bericht": "Guest Ledger", "achten": "Wie lange stehen Salden auf Zimmerkonten?", "alarm": "Posten älter als der längste denkbare Aufenthalt — der Gast ist längst weg.", "wie": "wöchentlich", "lvl": 3 },
+    { "punkt": "Altersstruktur Debitoren", "kat": "Debitoren", "bericht": "AR Aging / City Ledger", "achten": "Staffelung nach 30, 60, 90 Tagen und älter.", "alarm": "Wachsender Anteil über 90 Tage; Einzelposten ohne Bewegung seit Monaten.", "wie": "wöchentlich", "lvl": 3 },
+    { "punkt": "Rechnungslauf vollständig", "kat": "Debitoren", "bericht": "AR / offene Rechnungen", "achten": "Jede Abreise auf Rechnung hat eine versandte Rechnung.", "alarm": "Auszug liegt Tage zurück, Rechnung nicht raus — der häufigste Grund für alte Posten.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Unzugeordnete Zahlungseingänge", "kat": "Debitoren", "bericht": "Bank / AR", "achten": "Eingänge ohne Rechnungsbezug.", "alarm": "Sammelüberweisungen ohne Aufstellung; sie erzeugen alte Posten trotz bezahlter Rechnung.", "wie": "wöchentlich", "lvl": 4 },
+    { "punkt": "Deposits gegen Anreisen", "kat": "Deposit", "bericht": "Deposit Ledger", "achten": "Anzahlung wird bei Anreise auf das Zimmerkonto übernommen.", "alarm": "Deposit bleibt nach Anreise oder nach Storno stehen.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "Umsatzsteuer auf Anzahlungen", "kat": "Deposit", "bericht": "Deposit Ledger + Steuerbericht", "achten": "Die Steuer entsteht mit Vereinnahmung, nicht mit Anreise.", "alarm": "Anzahlungen laufen ohne Steuerausweis durch.", "wie": "monatlich", "lvl": 4 },
+    { "punkt": "No-Show-Bearbeitung", "kat": "Reservierung", "bericht": "Nachtlaufprotokoll", "achten": "Wurden No-Shows als solche gekennzeichnet und berechnet?", "alarm": "No-Show ohne Buchung und ohne Verzicht­vermerk — beides ist eine Entscheidung, keine davon darf unbemerkt fallen.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Stornogebühren und ihre Steuerbehandlung", "kat": "Reservierung", "bericht": "Revenue by Transaction Codes", "achten": "Trennung zwischen Entgelt für eine Leistung und Schadensersatz.", "alarm": "Alle Stornofälle auf demselben Code.", "wie": "monatlich", "lvl": 4 },
+    { "punkt": "Zimmer- und Steuerlauf", "kat": "Nachtlauf", "bericht": "Nachtlaufprotokoll", "achten": "Automatischer Room-&-Tax-Lauf ist ohne Fehler durchgelaufen.", "alarm": "Zimmer ohne Preisbuchung; Preis null ohne hinterlegten Grund.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Offene Anreisen und Abreisen", "kat": "Nachtlauf", "bericht": "Arrivals / Departures", "achten": "Vor dem Datumswechsel darf nichts offen sein.", "alarm": "Erwartete Abreise noch im Haus — dann läuft der Preis weiter.", "wie": "täglich", "lvl": 2 },
+    { "punkt": "Preis null und Hauskonten", "kat": "Nachtlauf", "bericht": "Rate Check / Manager Flash", "achten": "Kostenfreie Zimmer mit Grund und Freigabe.", "alarm": "Nullpreise ohne Vermerk; sie verzerren ADR und RevPAR nach unten.", "wie": "täglich", "lvl": 3 },
+    { "punkt": "Belegausgabe und TSE", "kat": "Kassenrecht", "bericht": "Kassensystem", "achten": "Sicherheitseinrichtung aktiv, Belegausgabe funktioniert.", "alarm": "TSE ausgefallen und nicht dokumentiert — der Ausfall selbst ist aufzeichnungspflichtig.", "wie": "täglich", "lvl": 4 },
+    { "punkt": "Verfahrensdokumentation aktuell", "kat": "Kassenrecht", "bericht": "—", "achten": "Beschreibung aller Systeme, Schnittstellen und Abläufe.", "alarm": "Letzte Fassung älter als die letzte Systemänderung — der häufigste Beanstandungspunkt.", "wie": "jährlich", "lvl": 5 },
+    { "punkt": "Schnittstellen ohne Fehlerprotokoll", "kat": "Schnittstellen", "bericht": "Interface-Protokoll", "achten": "Kasse, Telefon, Spa, Parken, Buchhaltung.", "alarm": "Protokoll wird nicht gelesen; Fehler fallen erst beim Monatsabschluss auf.", "wie": "täglich", "lvl": 4 },
+    { "punkt": "Übergabe an die Finanzbuchhaltung", "kat": "Schnittstellen", "bericht": "Exportprotokoll", "achten": "Summen im PMS gegen die gebuchten Summen im Rechnungswesen.", "alarm": "Differenz wird als „Rundung\" abgetan.", "wie": "monatlich", "lvl": 5 }
+  ]
+}

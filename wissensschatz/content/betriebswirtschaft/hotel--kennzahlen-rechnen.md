@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [revpar, adr, goppar, usali, belegung, hotel]
 prereqs: [bwl-einstieg, bwl-personalkosten]
-related: [bwl-revenue, fuehrung-kennzahlen, powerbi-sternschema, bwl-budget]
+related: [bwl-revenue, fuehrung-kennzahlen, powerbi-sternschema, bwl-budget, hotelabr-transaktionscodes, hotelabr-einstieg]
 summary: Was RevPAR wirklich misst und was nicht, warum GOPPAR die ehrlichere Größe ist — und die Abgrenzungsfehler, die jeden Vergleich zwischen zwei Häusern wertlos machen.
 ---
 

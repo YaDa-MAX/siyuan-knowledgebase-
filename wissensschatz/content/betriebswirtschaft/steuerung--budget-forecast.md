@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [budget, forecast, abweichung, planung, controlling]
 prereqs: [bwl-deckungsbeitrag, bwl-hotelkennzahlen]
-related: [bwl-revenue, excel-was-waere-wenn, excel-modellbau, powerbi-dax-time-intelligence]
+related: [bwl-revenue, excel-was-waere-wenn, excel-modellbau, powerbi-dax-time-intelligence, hotelabr-monatsabschluss]
 summary: Warum ein Jahresbudget nach zwei Monaten veraltet ist, wie ein rollierender Forecast das auffängt — und wie man eine Abweichung so zerlegt, dass sie eine Handlung nahelegt statt einer Rechtfertigung.
 ---
 

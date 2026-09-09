@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-11
 tags: [einstieg, umsatz, kosten, ergebnis, umsatzsteuer, fixkosten]
 prereqs: []
-related: [bwl-wareneinsatz, bwl-deckungsbeitrag, fuehrung-kennzahlen, excel-datentypen]
+related: [bwl-wareneinsatz, bwl-deckungsbeitrag, fuehrung-kennzahlen, excel-datentypen, hotelabr-transaktionscodes]
 summary: Warum netto und brutto nicht dasselbe Geschäft beschreiben, wo der Unterschied zwischen fixen und variablen Kosten über jede Entscheidung bestimmt — und die drei Ergebnisebenen, die man nie verwechseln darf.
 ---
 

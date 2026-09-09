@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [pivot, auswertung, aggregation]
 prereqs: [excel-tabellen]
-related: [excel-datenmodell, excel-dashboard, powerbi-sternschema]
+related: [excel-datenmodell, excel-dashboard, powerbi-sternschema, hotelabr-abstimmung]
 summary: Vier Ablagebereiche, ein Cache und eine Handvoll Einstellungen, die über brauchbar oder frustrierend entscheiden.
 ---
 

@@ -50,6 +50,14 @@
     "desc": "Gedächtnis, Abrufen, Verteilen, Verschachteln — die Befundlage der Lernforschung, übersetzt in Handlungen. Einschließlich dessen, was sich als unwirksam erwiesen hat.",
     "disclaimer": "Zusammengefasste Forschungslage, keine Garantie. Effektstärken schwanken mit Fach, Vorwissen und Alter; wo Befunde umstritten oder Replikationen gescheitert sind, steht es dabei."
   },
+  "hotelabrechnung": {
+    "label": "Hotelabrechnung",
+    "icon": "▤",
+    "color": "#6b7f2a",
+    "claim": "Woher die Zahlen kommen, bevor man sie auswertet",
+    "desc": "Transaktionscodes, Ledger, Nachtlauf, tägliche Kontrolle, Debitoren und Kassenrecht — die Buchungsseite des Hotelbetriebs.",
+    "disclaimer": "Kein Steuer- oder Rechtsrat. Kassen- und Umsatzsteuerrecht ändern sich laufend und werden im Einzelfall unterschiedlich beurteilt — vor jeder Anwendung mit der Steuerberatung abstimmen."
+  },
   "fuehrung": {
     "label": "Führung & HR",
     "icon": "◈",

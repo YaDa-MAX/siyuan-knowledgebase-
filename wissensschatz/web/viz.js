@@ -388,10 +388,15 @@
     /** Löst einen ::: viz-Block auf. */
     aufloesen(spec, caption) {
       const m = /^dataset:(.+)$/.exec(spec.trim());
-      if (m) return datensatz(m[1].trim(), caption);
+      if (m) {
+        const el = datensatz(m[1].trim(), caption);
+        el.dataset.spec = spec.trim();
+        return el;
+      }
       const fn = benannt[spec.trim()];
       if (fn) {
         const el = fn();
+        el.dataset.spec = spec.trim();
         if (caption) {
           const bu = el.querySelector("figcaption");
           if (bu) bu.textContent = caption;

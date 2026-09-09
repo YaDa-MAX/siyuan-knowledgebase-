@@ -9,7 +9,7 @@ status: geprueft
 updated: 2026-08-09
 tags: [rollout, change, governance, betrieb, dokumentation]
 prereqs: [prozessauto-eignung]
-related: [fuehrung-team, powerbi-betrieb, arbeitsrecht-betriebsrat, meta-pflegeroutine, lernen-praxis]
+related: [fuehrung-team, powerbi-betrieb, arbeitsrecht-betriebsrat, meta-pflegeroutine, lernen-praxis, hotelabr-kassenrecht]
 summary: Vom Pilot zum Regelbetrieb — inklusive der beiden Themen, die Projekte am häufigsten stoppen: Mitbestimmung und Zuständigkeit im Störungsfall.
 ---
 

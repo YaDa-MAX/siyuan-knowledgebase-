@@ -839,11 +839,86 @@
       "Lernmethoden nach Wirksamkeit und Aufwand in vier Feldern");
   }
 
+  /* ================================================== 13 · Ledger-Fluss */
+
+  function ledgerFluss() {
+    const B = 900, H = 430;
+    const kastenB = 196, kastenH = 74;
+
+    let s = PFEIL;
+
+    // Zeitphasen als Hintergrundbänder
+    const phasen = [
+      { x: 26, b: 250, t: "vor der Anreise" },
+      { x: 300, b: 250, t: "im Haus" },
+      { x: 574, b: 300, t: "nach der Abreise" },
+    ];
+    phasen.forEach((p) => {
+      s += rechteck(p.x, 18, p.b, H - 60, { fill: "currentColor", op: 0.035, r: 10 });
+      s += txt(p.x + p.b / 2, 38, p.t, { anchor: "middle", size: 11.5, weight: 700, op: 0.5 });
+    });
+
+    const kasten = (x, y, titel, unter, farbe, hinweis) => {
+      let k = rechteck(x, y, kastenB, kastenH, { fill: farbe, op: 0.12, r: 8, stroke: farbe, sw: 1.6 });
+      k += txt(x + 14, y + 26, titel, { size: 13, weight: 700, fill: farbe });
+      k += txt(x + 14, y + 44, unter, { size: 10, op: 0.7 });
+      if (hinweis) k += txt(x + 14, y + 61, hinweis, { size: 9.5, fill: farbe, op: 0.9, weight: 600 });
+      return k;
+    };
+
+    // Die vier Bestände
+    s += kasten(48, 96, "Deposit Ledger", "erhaltene Anzahlung", "var(--vz-orange)", "Geld ohne Erlös");
+    s += kasten(322, 96, "Guest Ledger", "Gast ist im Haus", "var(--vz-blau)", "hier entsteht der Erlös");
+    s += kasten(614, 62, "City Ledger", "Rechnung an Debitor", "var(--vz-lila)", "Forderung, kein Geld");
+    s += kasten(614, 186, "PM-Konto", "Gruppe, Bankett, Dauerposten", "var(--vz-grau)", "hat kein Ende");
+    s += kasten(614, 310, "Zahlung", "Kasse, Karte, Bank", "var(--vz-gruen)", "erst hier ist es Geld");
+
+    // Übergänge
+    const pfeil = (x1, y1, x2, y2, text, unter, farbe) => {
+      let p = linie(x1, y1, x2, y2, { stroke: farbe || "currentColor", sw: 1.8, op: 0.55, marker: "pfeil" });
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      p += txt(mx, my - 8, text, { anchor: "middle", size: 10, weight: 600, op: 0.85 });
+      if (unter) p += txt(mx, my + 5, unter, { anchor: "middle", size: 9, op: 0.55 });
+      return p;
+    };
+
+    s += pfeil(244, 133, 318, 133, "bei Anreise", "übertragen", "var(--vz-orange)");
+    s += pfeil(518, 112, 610, 92, "Übertrag", "auf Rechnung", "var(--vz-lila)");
+    s += pfeil(518, 140, 610, 208, "Übertrag", "auf Sammelkonto", "var(--vz-grau)");
+    s += pfeil(518, 160, 610, 336, "bezahlt", "", "var(--vz-gruen)");
+
+    // Der Weg vom Debitor zur Zahlung läuft außen um das PM-Konto herum —
+    // durch die Mitte kreuzte er es und überschrieb seine Beschriftung.
+    const rx = 842;
+    s += linie(812, 98, rx, 98, { stroke: "var(--vz-lila)", sw: 1.8, op: 0.55 });
+    s += linie(rx, 98, rx, 346, { stroke: "var(--vz-lila)", sw: 1.8, op: 0.55 });
+    s += linie(rx, 346, 814, 346, { stroke: "var(--vz-lila)", sw: 1.8, op: 0.55, marker: "pfeil" });
+    s += txt(rx + 16, 222, "Zahlungseingang, Tage bis Monate später",
+      { anchor: "middle", size: 9.5, op: 0.65, rot: -90 });
+
+    // Rückweg der Anzahlung bei Storno
+    s += linie(146, 170, 146, 214, { stroke: "var(--vz-orange)", sw: 1.6, op: 0.5, dash: "4 3", marker: "pfeil" });
+    s += txt(146, 232, "bei Storno zurück", { anchor: "middle", size: 9.5, op: 0.6 });
+    s += txt(146, 245, "oder verrechnet", { anchor: "middle", size: 9.5, op: 0.6 });
+
+    // Die Kernaussage
+    s += rechteck(322, 300, 250, 84, { fill: "var(--vz-rot)", op: 0.08, r: 8, stroke: "var(--vz-rot)", sw: 1.4 });
+    s += txt(340, 324, "Ein Übertrag ist", { size: 12, weight: 700, fill: "var(--vz-rot)" });
+    s += txt(340, 340, "keine Zahlung.", { size: 12, weight: 700, fill: "var(--vz-rot)" });
+    s += txt(340, 358, "Das Zimmerkonto ist ausgeglichen,", { size: 9.5, op: 0.7 });
+    s += txt(340, 371, "die Forderung besteht weiter.", { size: 9.5, op: 0.7 });
+
+    return figur(`0 0 ${B} ${H}`, s,
+      "Dieselbe Forderung, an vier verschiedenen Orten — je nachdem, in welchem Verhältnis der Gast gerade zum Haus steht. <strong>Erlös entsteht erst im Guest Ledger</strong>, beim nächtlichen Zimmerlauf; die Anzahlung davor ist eine Verbindlichkeit. Und der Weg nach rechts oben ist der gefährlichste: Er sieht beim Check-out wie ein Ausgleich aus und ist der Anfang eines Debitorenpostens.",
+      "Weg einer Forderung durch Deposit Ledger, Guest Ledger, City Ledger, PM-Konto und Zahlung");
+  }
+
   /* ------------------------------------------------------- Registrieren */
 
   Object.assign(VIZ.benannt, {
     "vergessenskurve": vergessenskurve,
     "lernmethoden": lernmethoden,
+    "ledger-fluss": ledgerFluss,
     "bajonett-skala": bajonettSkala,
     "arbeitszeit-tag": arbeitszeitTag,
     "sternschema": sternschema,
